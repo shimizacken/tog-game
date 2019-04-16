@@ -2,7 +2,7 @@
 
 exports[`driveDashboard reducer test suite should return initial state 1`] = `
 Object {
-  "drivingButtonState": 1,
+  "drivingButtonState": "READY",
   "throttleStick": 0,
 }
 `;

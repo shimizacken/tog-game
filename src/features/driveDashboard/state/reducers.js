@@ -1,8 +1,8 @@
 const DrivingButtonStates = {
-    TURNED_OFF: 0,
-    READY: 1,
-    DRIVE: 2,
-    ERROR: 3
+    TURNED_OFF: 'TURNED_OFF',
+    READY: 'READY',
+    DRIVE: 'DRIVE',
+    ERROR: 'ERROR'
 };
 
 const initialState = {
