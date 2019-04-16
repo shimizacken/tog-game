@@ -1,4 +1,4 @@
-import { SET_DRIVE_BUTTON_STATUS } from "./constants";
+import { SET_DRIVE_BUTTON_STATUS, SET_THROTTLE_SPEED } from "./constants";
 
 export const DrivingButtonStates = {
     TURNED_OFF: 'TURNED_OFF',
@@ -9,18 +9,25 @@ export const DrivingButtonStates = {
 
 const initialState = {
     drivingButtonState: DrivingButtonStates.READY,
-    throttleStick: 0
+    throttleSpeed: 0
 };
 
 const driveDashboard = (state = initialState, action) => {
 
     if (action.type === SET_DRIVE_BUTTON_STATUS) {
-        console.log(state, action);
         
         return {
             ...state,
             drivingButtonState: action.drivingButtonState
-        }
+        };
+    }
+
+    if (action.type === SET_THROTTLE_SPEED) {
+        
+        return {
+            ...state,
+            throttleSpeed: action.throttleSpeed
+        };
     }
 
     return state;
