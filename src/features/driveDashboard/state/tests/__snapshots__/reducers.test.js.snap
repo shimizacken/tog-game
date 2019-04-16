@@ -6,3 +6,31 @@ Object {
   "throttleStick": 0,
 }
 `;
+
+exports[`driveDashboard reducer test suite should set DRIVE with initial state 1`] = `
+Object {
+  "drivingButtonState": "DRIVE",
+  "throttleStick": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite should set ERROR with initial state 1`] = `
+Object {
+  "drivingButtonState": "ERROR",
+  "throttleStick": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite should set READY with none initial state 1`] = `
+Object {
+  "drivingButtonState": "READY",
+  "throttleStick": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite should set TURNED_OFF with initial state 1`] = `
+Object {
+  "drivingButtonState": "TURNED_OFF",
+  "throttleStick": 0,
+}
+`;
