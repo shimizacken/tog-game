@@ -7,5 +7,8 @@ export const setDrivingButtonState = drivingButtonState => ({
 
 export const setThrottleSpeed = throttleSpeed => ({
   type: SET_THROTTLE_SPEED,
-  throttleSpeed
+  throttleSpeed,
+  meta: {
+    throttle: 500
+  }
 });
