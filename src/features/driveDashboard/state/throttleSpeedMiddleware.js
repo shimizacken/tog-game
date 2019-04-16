@@ -2,7 +2,7 @@ import { SET_THROTTLE_SPEED } from './constants';
 
 const pending = {};
 
-export const driveDashboardMiddleware = ({ dispatch, getState }) => next => action => {
+export const throttleSpeedMiddleware = ({ dispatch, getState }) => next => action => {
 
     if (action.type !== SET_THROTTLE_SPEED) {
         

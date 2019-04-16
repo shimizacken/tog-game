@@ -1,5 +1,5 @@
 import { createFakedMiddleware } from '../../../../../__mocks__/middleware';
-import { driveDashboardMiddleware } from '../middleware';
+import { throttleSpeedMiddleware } from '../throttleSpeedMiddleware';
 import { setThrottleSpeed } from '../actions';
 
 jest.useFakeTimers();
@@ -16,7 +16,7 @@ describe('driveDashboardMiddleware test suite', () => {
 
       it('should passes through non-function action', () => {
         
-        const { next, invoke } = createFakedMiddleware(driveDashboardMiddleware);
+        const { next, invoke } = createFakedMiddleware(throttleSpeedMiddleware);
         const action = { type: '@@test-type' };
   
         invoke(action);
@@ -29,7 +29,7 @@ describe('driveDashboardMiddleware test suite', () => {
     
         it('should call next with setThrottleSpeed action after timeout', () => {
 
-            const { next, invoke } = createFakedMiddleware(driveDashboardMiddleware);      
+            const { next, invoke } = createFakedMiddleware(throttleSpeedMiddleware);      
             const action = setThrottleSpeed(50);
       
             invoke(action);
