@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set DRIVE with initial state 1`] = `
+Object {
+  "drivingButtonState": "DRIVE",
+  "throttleSpeed": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set ERROR with initial state 1`] = `
+Object {
+  "drivingButtonState": "ERROR",
+  "throttleSpeed": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set READY with none initial state 1`] = `
+Object {
+  "drivingButtonState": "READY",
+  "throttleSpeed": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set TURNED_OFF with initial state 1`] = `
+Object {
+  "drivingButtonState": "TURNED_OFF",
+  "throttleSpeed": 0,
+}
+`;
+
+exports[`driveDashboard reducer test suite SET_THROTTLE_SPEED test suite should set throttle speed to 20 with initial state 1`] = `
+Object {
+  "drivingButtonState": "READY",
+  "throttleSpeed": 20,
+}
+`;
+
+exports[`driveDashboard reducer test suite SET_THROTTLE_SPEED test suite should set throttle speed to 100 with none initial state 1`] = `
+Object {
+  "drivingButtonState": "DRIVE",
+  "throttleSpeed": 100,
+}
+`;
+
+exports[`driveDashboard reducer test suite initial state test suite should return initial state 1`] = `
+Object {
+  "drivingButtonState": "READY",
+  "throttleSpeed": 0,
+}
+`;
