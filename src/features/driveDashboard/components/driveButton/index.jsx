@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import DrivingButtonStates from '../../services/ui/enums/drivingButtonStates';
 import styles from './index.module.scss';
 
-const DriveButton = ({drivingButtonStates, onClick}) => {
+const DriveButton = React.memo(({drivingButtonStates, onClick}) => {
 
     let color;
 
@@ -34,7 +34,7 @@ const DriveButton = ({drivingButtonStates, onClick}) => {
             onClick={onClick}
         >
         </button>);
-};
+});
 
 DriveButton.propTypes = {
     drivingButtonStates: PropTypes.string.isRequired,
