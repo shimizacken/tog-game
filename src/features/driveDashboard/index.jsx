@@ -44,14 +44,13 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     };
 
     return (
-        <div className={getClassName()}
-        >
+        <div>
         <div>
             <h1>
                 {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
             </h1>
         </div>
-        <div className={styles.root}>
+        <div className={classNames(styles.root, getClassName())}>
             <div className={styles.innerwrapper}>
                 <div>
                     <DrivingButton 
