@@ -1,9 +1,9 @@
 button.root {
-  width: 110px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
 
   border-radius: 50%;
-  border: 4px solid gray;
+  border: 10px solid gray;
 
   cursor: pointer;
 
@@ -12,15 +12,11 @@ button.root {
   }
 
   &:hover {
-    border: 4px solid #999999;
-  }
-
-  &:active {
-    background-color: black;
+    border: 10px solid #999999;
   }
 
   &.turnedoff {
-    background-color: gray;
+    background-color: #efefef;
   }
 
   &.ready {
@@ -33,5 +29,18 @@ button.root {
 
   &.error {
     background-color: #cc4125;
+  }
+
+  &.blink {
+    animation: blinker 0.8s linear infinite;
+  }
+
+  @keyframes blinker {
+    0% {
+      background-color: #ffe599;
+    }
+    50% {
+      background-color: #ffd966;
+    }
   }
 }

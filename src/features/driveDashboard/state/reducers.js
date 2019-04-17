@@ -1,4 +1,4 @@
-import { SET_DRIVE_BUTTON_STATUS, SET_THROTTLE_SPEED } from "./constants";
+import { SET_DRIVE_BUTTON_STATUS, SET_THROTTLE_SPEED, SET_DRIVE_BUTTON_SWITCHING_STATUS } from "./constants";
 import DrivingButtonStates from "../services/ui/enums/drivingButtonStates";
 
 const initialState = {
@@ -9,6 +9,14 @@ const initialState = {
 const driveDashboard = (state = initialState, action) => {
 
     if (action.type === SET_DRIVE_BUTTON_STATUS) {
+        
+        return {
+            ...state,
+            drivingButtonState: action.drivingButtonState
+        };
+    }
+
+    if (action.type === SET_DRIVE_BUTTON_SWITCHING_STATUS) {
         
         return {
             ...state,

@@ -2,7 +2,8 @@ const DrivingButtonStates = {
     TURNED_OFF: 'TURNED_OFF',
     READY: 'READY',
     DRIVE: 'DRIVE',
-    ERROR: 'ERROR'
+    ERROR: 'ERROR',
+    SWITCHING: 'SWITCHING'
 };
 
 export default DrivingButtonStates;
