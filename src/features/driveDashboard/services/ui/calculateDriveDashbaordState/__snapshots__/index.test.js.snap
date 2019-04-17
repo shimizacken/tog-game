@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calculateDrivingStatus test suite default driving status should return defaults which is not driving 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite driving should drive when DRIVE and more than 0 1`] = `true`;
+
+exports[`calculateDrivingStatus test suite not driving at 0 speed should return not driving when DRIVE and 0 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite not driving at 0 speed should return not driving when ERROR and 0 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite not driving at 0 speed should return not driving when TURNED_OFF and 0 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite not driving at more than 0 speed should return not driving when DRIVE and 50 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite not driving at more than 0 speed should return not driving when ERROR and 1 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite not driving at more than 0 speed should return not driving when READY and 50 1`] = `false`;
+
+exports[`calculateDrivingStatus test suite not driving at more than 0 speed should return not driving when TURNED_OFF and 50 1`] = `false`;
