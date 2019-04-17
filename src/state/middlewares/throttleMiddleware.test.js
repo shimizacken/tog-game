@@ -1,5 +1,5 @@
 import { createFakedMiddleware } from '../../../__mocks__/middleware';
-import { throttleMiddleware } from './throttleMiddleware';
+import throttleMiddleware from '../middlewares/throttleMiddleware';
 import { setThrottleSpeed } from '../../features/driveDashboard/state/actions';
 
 jest.useFakeTimers();
