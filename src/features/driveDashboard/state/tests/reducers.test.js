@@ -49,6 +49,16 @@ describe('driveDashboard reducer test suite', () => {
                     
             expect(driveDashboard(state, setDrivingButtonState(DrivingButtonStates.READY))).toMatchSnapshot();
         });
+
+        it('should set SWITCHING with none initial state', () => {
+            
+            const state = {
+                drivingButtonState: DrivingButtonStates.DRIVE,
+                throttleSpeed: 0
+            };
+                    
+            expect(driveDashboard(state, setDrivingButtonState(DrivingButtonStates.SWITCHING))).toMatchSnapshot();
+        });
     });
     
     describe('SET_THROTTLE_SPEED test suite', () => {

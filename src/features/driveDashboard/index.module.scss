@@ -34,27 +34,34 @@
 }
 
 .shakeveryslow {
-  animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  animation: shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
 .shakeslow {
-  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
 .shakefast {
-  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 
 .shakeveryfast {
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.shakeveryveryfast {
   animation: shake 0.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
