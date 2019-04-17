@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 import Slider from 'react-input-slider';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
@@ -16,7 +17,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     const drivingStatus = calculateDrivingStatus(drivingButtonState, throttleSpeed);
     
     return (
-        <div>
+        <div className={classNames(drivingStatus === true && styles.shakeanimation)}>
         <div>
             <h1>
                 {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
