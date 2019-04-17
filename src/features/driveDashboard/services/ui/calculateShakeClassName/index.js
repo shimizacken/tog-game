@@ -1,9 +1,7 @@
 const calculateShakeClassName = (drivingStatus, throttleSpeed, styles) => {
 
-    let style;
-
     if(drivingStatus === false) {
-        return style;
+        return;
     }
 
     if(throttleSpeed > 80 && throttleSpeed <= 100) {
@@ -26,7 +24,7 @@ const calculateShakeClassName = (drivingStatus, throttleSpeed, styles) => {
         return styles.shakeveryslow;
     }
 
-    return style;
+    return;
 };
 
 export default calculateShakeClassName;
