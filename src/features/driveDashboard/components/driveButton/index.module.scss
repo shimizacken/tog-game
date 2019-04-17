@@ -1,3 +1,5 @@
+@import "../../../../styles/colors";
+
 button.root {
   width: 150px;
   height: 150px;
@@ -12,23 +14,23 @@ button.root {
   }
 
   &:hover {
-    border: 10px solid #999999;
+    border: 10px solid $drive-button-border-hover;
   }
 
   &.turnedoff {
-    background-color: #efefef;
+    background-color: $drive-button-turned-off-background;
   }
 
   &.ready {
-    background-color: #f6b26b;
+    background-color: $drive-button-ready-orange;
   }
 
   &.drive {
-    background-color: #98c379;
+    background-color: $drive-button-drive-green;
   }
 
   &.error {
-    background-color: #cc4125;
+    background-color: $drive-button-error-red;
   }
 
   &.blink {
@@ -37,10 +39,10 @@ button.root {
 
   @keyframes blinker {
     0% {
-      background-color: #ffe599;
+      background-color: $drive-button-blink-1;
     }
     50% {
-      background-color: #ffd966;
+      background-color: $drive-button-blink-2;
     }
   }
 }
