@@ -1,3 +1,5 @@
+import { throttleStart } from "../actions";
+
 const throttled = {};
 
 const throttleMiddleware = ({ dispatch, getState }) => next => action => {
@@ -15,6 +17,7 @@ const throttleMiddleware = ({ dispatch, getState }) => next => action => {
     }
 
     throttled[action.type] = true;
+    dispatch(throttleStart());
 
     setTimeout(() => {
 
