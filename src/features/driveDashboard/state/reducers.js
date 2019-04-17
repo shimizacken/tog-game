@@ -1,5 +1,5 @@
 import { SET_DRIVE_BUTTON_STATUS, SET_THROTTLE_SPEED } from "./constants";
-import DrivingButtonStates from "../services/ui/drivingButtonStates";
+import DrivingButtonStates from "../services/ui/enums/drivingButtonStates";
 
 const initialState = {
     drivingButtonState: DrivingButtonStates.TURNED_OFF,

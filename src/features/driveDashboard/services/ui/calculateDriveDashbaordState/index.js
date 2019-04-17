@@ -1,4 +1,4 @@
-import DrivingButtonStates from '../drivingButtonStates';
+import DrivingButtonStates from '../enums/drivingButtonStates';
 
 const calculateDrivingStatus = (drivingButtonState = DrivingButtonStates.READY, throttleSpeed = 0) => {
 
