@@ -16,6 +16,14 @@ Object {
 }
 `;
 
+exports[`calculateDrivingButtonState test suite rest states should return ERROR when ERROR 1`] = `
+Object {
+  "color": "RED",
+  "drivingButtonStates": "ERROR",
+  "seconds": 0,
+}
+`;
+
 exports[`calculateDrivingButtonState test suite rest states should return READY when DRIVE 1`] = `
 Object {
   "color": "ORANGE",

@@ -13,6 +13,13 @@ describe('calculateDrivingButtonState test suite', () => {
     
     describe('rest states', () => {
       
+        it('should return ERROR when ERROR', () => {
+        
+            const currentState = DrivingButtonStates.ERROR;
+            
+            expect(calculateDrivingButtonState(currentState)).toMatchSnapshot();
+        });
+
         it('should return READY when TURNED_OFF', () => {
         
             const currentState = DrivingButtonStates.TURNED_OFF;
