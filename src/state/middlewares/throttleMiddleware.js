@@ -1,6 +1,6 @@
 const throttled = {};
 
-export const throttleMiddleware = ({ dispatch, getState }) => next => action => {
+const throttleMiddleware = ({ dispatch, getState }) => next => action => {
 
     const time = action.meta && action.meta.throttle;
 
@@ -22,3 +22,5 @@ export const throttleMiddleware = ({ dispatch, getState }) => next => action => 
         next(action);
     }, time);
 };
+
+export default throttleMiddleware;

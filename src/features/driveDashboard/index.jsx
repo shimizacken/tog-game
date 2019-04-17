@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 const DrivingDashboardContainer = () => {
 
-    return <div class={styles.root}>Driving dashboard</div>;
+    return <div className={styles.root}>Driving dashboard</div>;
 };
 
 DrivingDashboardContainer.propTypes = {

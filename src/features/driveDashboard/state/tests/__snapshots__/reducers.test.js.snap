@@ -30,7 +30,7 @@ Object {
 
 exports[`driveDashboard reducer test suite SET_THROTTLE_SPEED test suite should set throttle speed to 20 with initial state 1`] = `
 Object {
-  "drivingButtonState": "READY",
+  "drivingButtonState": "TURNED_OFF",
   "throttleSpeed": 20,
 }
 `;
@@ -44,7 +44,7 @@ Object {
 
 exports[`driveDashboard reducer test suite initial state test suite should return initial state 1`] = `
 Object {
-  "drivingButtonState": "READY",
+  "drivingButtonState": "TURNED_OFF",
   "throttleSpeed": 0,
 }
 `;
