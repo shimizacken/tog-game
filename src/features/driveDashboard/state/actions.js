@@ -15,6 +15,6 @@ export const setThrottleSpeed = throttleSpeed => ({
   type: SET_THROTTLE_SPEED,
   throttleSpeed,
   meta: {
-    throttle: 500
+    throttle: 0
   }
 });

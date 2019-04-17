@@ -20,6 +20,7 @@ const throttleMiddleware = ({ dispatch, getState }) => next => action => {
 
         throttled[action.type] = false;
         next(action);
+        
     }, time);
 };
 
