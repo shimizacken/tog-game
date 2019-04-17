@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import styles from './index.module.scss';
 import { setDrivingButtonState } from './state/actions';
-import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
+import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState'
 
 const DrivingDashboardContainer = ({drivingButtonState, setDrivingButtonState}) => {
 
@@ -11,14 +11,16 @@ const DrivingDashboardContainer = ({drivingButtonState, setDrivingButtonState}) 
     
     return (
         <div className={styles.root}>
-            <h1>
-                {drivingButtonState}
-            </h1>
-            <div>
-                <DrivingButton 
-                    drivingButtonStates={drivingButtonState}
-                    onClick={click}
-                />
+            <div className={styles.innerwrapper}>
+                <h1>
+                    {drivingButtonState}
+                </h1>
+                <div>
+                    <DrivingButton 
+                        drivingButtonStates={drivingButtonState}
+                        onClick={click}
+                    />
+                </div>
             </div>
         </div>);
 };
