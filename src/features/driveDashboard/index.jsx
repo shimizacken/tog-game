@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
 import Slider from 'react-input-slider';
@@ -12,12 +12,10 @@ import calculateShakeClassName from './services/ui/calculateShakeClassName';
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
 
     const click = () => setDrivingButtonState(calculateDrivingButtonState(drivingButtonState).drivingButtonStates);
-    
     const change = (axis) => setThrottleSpeed(axis.y);
 
-    const drivingStatus = calculateDrivingStatus(drivingButtonState, throttleSpeed);
-    
-    const shakeClassName = calculateShakeClassName(drivingStatus, throttleSpeed, styles);
+    const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed));
+    const shakeClassName = useMemo(() => calculateShakeClassName(drivingStatus, throttleSpeed, styles));
 
     return (
         <div>
