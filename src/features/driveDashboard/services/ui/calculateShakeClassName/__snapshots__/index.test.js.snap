@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calculateShakeClassName test suite should return undefined when no drivingStatus passed 1`] = `undefined`;
