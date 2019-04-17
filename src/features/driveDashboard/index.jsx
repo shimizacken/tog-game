@@ -1,14 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import DrivingButton from '../driveDashboard/components/driveButton';
 import styles from './index.module.scss';
+import { setDrivingButtonState } from './state/actions';
+import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState'
 
-const DrivingDashboardContainer = () => {
+const DrivingDashboardContainer = ({drivingButtonState, setDrivingButtonState}) => {
 
-    return <div className={styles.root}>Driving dashboard</div>;
+    const click = () => setDrivingButtonState(calculateDrivingButtonState(drivingButtonState).drivingButtonStates);
+    
+    return (
+        <div className={styles.root}>
+            <div>
+                <DrivingButton 
+                    drivingButtonStates={drivingButtonState}
+                    onClick={click}
+                />
+            </div>
+        </div>);
 };
 
-DrivingDashboardContainer.propTypes = {
+const mapStateToProps = state => ({
+    drivingButtonState: state.driveDashboard.drivingButtonState
+});
 
+const mapDispatchToProps = {
+    setDrivingButtonState
 };
 
-export default DrivingDashboardContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(DrivingDashboardContainer);
