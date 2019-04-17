@@ -21,6 +21,13 @@ Object {
 }
 `;
 
+exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set SWITCHING with none initial state 1`] = `
+Object {
+  "drivingButtonState": "SWITCHING",
+  "throttleSpeed": 0,
+}
+`;
+
 exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set TURNED_OFF with initial state 1`] = `
 Object {
   "drivingButtonState": "TURNED_OFF",
