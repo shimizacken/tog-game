@@ -10,18 +10,25 @@ const DrivingDashboardContainer = ({drivingButtonState, setDrivingButtonState}) 
     const click = () => setDrivingButtonState(calculateDrivingButtonState(drivingButtonState).drivingButtonStates);
     
     return (
+        <div>
+        <div>
+            <h1>
+                {drivingButtonState}
+            </h1>
+        </div>
         <div className={styles.root}>
             <div className={styles.innerwrapper}>
-                <h1>
-                    {drivingButtonState}
-                </h1>
                 <div>
                     <DrivingButton 
                         drivingButtonStates={drivingButtonState}
                         onClick={click}
                     />
                 </div>
+                <div>
+                    throttle stick
+                </div>
             </div>
+        </div>
         </div>);
 };
 
