@@ -24,6 +24,10 @@ const DriveButton = ({drivingButtonStates, onClick}) => {
         color = styles.error;
     }
 
+    if (drivingButtonStates === DrivingButtonStates.SWITCHING) {
+        color = styles.blink;
+    }
+
     return (
         <button 
             className={classNames(styles.root, color)}

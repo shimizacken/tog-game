@@ -34,4 +34,17 @@ button.root {
   &.error {
     background-color: #cc4125;
   }
+
+  &.blink {
+    animation: blinker 0.8s linear infinite;
+  }
+
+  @keyframes blinker {
+    0% {
+      background-color: #ffe599;
+    }
+    50% {
+      background-color: #ffd966;
+    }
+  }
 }
