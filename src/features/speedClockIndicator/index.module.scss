@@ -1,0 +1,9 @@
+@import "../../styles/colors";
+
+.root {
+  width: 200px;
+  height: 200px;
+
+  border: 3px solid $drive-button-border;
+  border-radius: 50%;
+}
