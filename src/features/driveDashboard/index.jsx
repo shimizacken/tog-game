@@ -6,8 +6,8 @@ import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
 import calculateDrivingStatus from './services/ui/calculateDrivingStatus';
-import styles from './index.module.scss';
 import calculateShakeClassName from './services/ui/calculateShakeClassName';
+import styles from './index.module.scss';
 
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
 
