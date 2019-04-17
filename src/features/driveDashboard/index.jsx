@@ -7,6 +7,7 @@ import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
 import calculateDrivingStatus from './services/ui/calculateDrivingStatus';
 import styles from './index.module.scss';
+import calculateShakeClassName from './services/ui/calculateShakeClassName';
 
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
 
@@ -16,32 +17,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
 
     const drivingStatus = calculateDrivingStatus(drivingButtonState, throttleSpeed);
     
-    const getClassName = () => {
-
-        if(drivingStatus === false) {
-            return;
-        }
-
-        let style;
-
-        if(throttleSpeed > 60 && throttleSpeed <= 100) {
-            style = styles.shakeveryfast;
-        }
-        
-        if(throttleSpeed > 40 && throttleSpeed < 60) {
-            style = styles.shakefast;
-        }
-
-        if(throttleSpeed > 10 && throttleSpeed < 40) {
-            style = styles.shakeslow;
-        }
-
-        if(throttleSpeed > 0 && throttleSpeed < 10) {
-            style = styles.shakeveryslow;
-        }
-
-        return style;
-    };
+    const shakeClassName = calculateShakeClassName(drivingStatus, throttleSpeed, styles);
 
     return (
         <div>
@@ -50,7 +26,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
                 {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
             </h1>
         </div>
-        <div className={classNames(styles.root, getClassName())}>
+        <div className={classNames(styles.root, shakeClassName)}>
             <div className={styles.innerwrapper}>
                 <div>
                     <DrivingButton 
