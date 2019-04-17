@@ -6,19 +6,23 @@ const calculateShakeClassName = (drivingStatus, throttleSpeed, styles) => {
 
     let style;
 
-    if(throttleSpeed > 60 && throttleSpeed <= 100) {
+    if(throttleSpeed > 80 && throttleSpeed <= 100) {
+        style = styles.shakeveryveryfast;
+    }
+
+    if(throttleSpeed > 60 && throttleSpeed <= 80) {
         style = styles.shakeveryfast;
     }
     
-    if(throttleSpeed > 40 && throttleSpeed < 60) {
+    if(throttleSpeed > 40 && throttleSpeed <= 60) {
         style = styles.shakefast;
     }
 
-    if(throttleSpeed > 10 && throttleSpeed < 40) {
+    if(throttleSpeed > 20 && throttleSpeed <= 40) {
         style = styles.shakeslow;
     }
 
-    if(throttleSpeed > 0 && throttleSpeed < 10) {
+    if(throttleSpeed > 0 && throttleSpeed <= 20) {
         style = styles.shakeveryslow;
     }
 
