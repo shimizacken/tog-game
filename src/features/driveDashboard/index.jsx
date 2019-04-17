@@ -11,6 +11,9 @@ const DrivingDashboardContainer = ({drivingButtonState, setDrivingButtonState}) 
     
     return (
         <div className={styles.root}>
+            <h1>
+                {drivingButtonState}
+            </h1>
             <div>
                 <DrivingButton 
                     drivingButtonStates={drivingButtonState}
