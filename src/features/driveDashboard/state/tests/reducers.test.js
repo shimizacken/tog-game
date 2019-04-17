@@ -1,6 +1,6 @@
 import { driveDashboard } from '../reducers';
 import { setDrivingButtonState, setThrottleSpeed } from '../actions';
-import { DrivingButtonStates } from '../../services/ui/drivingButtonStates';
+import DrivingButtonStates from '../../services/ui/drivingButtonStates';
 
 describe('driveDashboard reducer test suite', () => {
   

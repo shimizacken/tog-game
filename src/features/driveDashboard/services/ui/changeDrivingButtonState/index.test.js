@@ -1,5 +1,5 @@
 import calculateDrivingButtonState from './index';
-import { DrivingButtonStates } from '../drivingButtonStates';
+import DrivingButtonStates from '../drivingButtonStates';
 
 describe('calculateDrivingButtonState test suite', () => {
   

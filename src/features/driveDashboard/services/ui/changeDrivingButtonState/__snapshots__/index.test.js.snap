@@ -31,35 +31,3 @@ Object {
   "seconds": 2,
 }
 `;
-
-exports[`changeDrivingButtonState test suite default state should return default state 1`] = `
-Object {
-  "color": "ORANGE",
-  "drivingButtonStates": "READY",
-  "seconds": 2,
-}
-`;
-
-exports[`changeDrivingButtonState test suite rest states should return DRIVE when READY 1`] = `
-Object {
-  "color": "GREEN",
-  "drivingButtonStates": "DRIVE",
-  "seconds": 2,
-}
-`;
-
-exports[`changeDrivingButtonState test suite rest states should return READY when DRIVE 1`] = `
-Object {
-  "color": "ORANGE",
-  "drivingButtonStates": "READY",
-  "seconds": 2,
-}
-`;
-
-exports[`changeDrivingButtonState test suite rest states should return READY when TURNED_OFF 1`] = `
-Object {
-  "color": "ORANGE",
-  "drivingButtonStates": "READY",
-  "seconds": 2,
-}
-`;

@@ -1,4 +1,4 @@
-import { DrivingButtonStates } from '../drivingButtonStates';
+import DrivingButtonStates from '../drivingButtonStates';
 import DrivingButtonColors from '../drivingButtonColors';
 
 const calculateDrivingButtonState = (currentState = DrivingButtonStates.TURNED_OFF) => {
