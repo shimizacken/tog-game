@@ -17,7 +17,12 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     const drivingStatus = calculateDrivingStatus(drivingButtonState, throttleSpeed);
     
     return (
-        <div className={classNames(drivingStatus === true && styles.shakeanimation)}>
+        <div className={
+            classNames(
+                (drivingStatus === true && throttleSpeed < 50) && styles.shakeslow,
+                (drivingStatus === true && throttleSpeed >= 50) && styles.shakefast
+            )}
+        >
         <div>
             <h1>
                 {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
