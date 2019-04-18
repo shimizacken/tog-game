@@ -38,4 +38,25 @@
     transform-origin: 20px 75px;
     transition: transform 3s ease-in-out;
   }
+
+  .label {
+    position: absolute;
+    font-weight: bold;
+    font-style: italic;
+    color: #444444;
+  }
+
+  .label0 {
+    left: 10px;
+    margin-top: 34px;
+  }
+
+  .label50 {
+    top: 3px;
+  }
+
+  .label100 {
+    right: 10px;
+    margin-top: 34px;
+  }
 }
