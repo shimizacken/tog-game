@@ -9,6 +9,7 @@ import calculateDrivingStatus from './services/ui/calculateDrivingStatus';
 import calculateShakeClassName from './services/ui/calculateShakeClassName';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
 import styles from './index.module.scss';
+import Speedometer from './components/speedometer';
 
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
 
@@ -29,6 +30,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
                 {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
             </h1>
         </div>
+        <Speedometer speed={throttleSpeed} />
         <div className={classNames(styles.root, shakeClassName)}>
             <div className={styles.innerwrapper}>
                 <div>
