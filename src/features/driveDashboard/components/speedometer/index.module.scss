@@ -34,5 +34,6 @@
     border-color: transparent transparent black transparent;
 
     transform-origin: 20px 75px;
+    transition: transform 3s ease-in-out;
   }
 }
