@@ -3,7 +3,8 @@ import DrivingButtonStates from "../services/ui/enums/drivingButtonStates";
 
 const initialState = {
     drivingButtonState: DrivingButtonStates.TURNED_OFF,
-    throttleSpeed: 0
+    throttleSpeed: 0,
+    drivingStatus: false
 };
 
 const driveDashboard = (state = initialState, action) => {
