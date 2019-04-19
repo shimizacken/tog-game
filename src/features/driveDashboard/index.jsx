@@ -32,7 +32,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
                 {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
             </h1>
         </div>
-        <Speedometer speed={interpolate(throttleSpeed)} />
+        <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
         <div className={classNames(styles.root, shakeClassName)}>
             <div className={styles.innerwrapper}>
                 <div>
