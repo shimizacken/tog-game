@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
-import classNames from 'classnames';
 import Slider from 'react-input-slider';
 import rangeMapper from 'range-mapper';
 import DrivingButton from '../driveDashboard/components/driveButton';
@@ -26,14 +25,14 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     }, []);
 
     return (
-        <div>
-        <div>
-            <h1>
-                {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
-            </h1>
-        </div>
+        <div className={shakeClassName}>
+            <div>
+                <h1>
+                    {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
+                </h1>
+            </div>
         <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
-        <div className={classNames(styles.root, shakeClassName)}>
+        <div className={styles.root}>
             <div className={styles.innerwrapper}>
                 <div>
                     <DrivingButton 
