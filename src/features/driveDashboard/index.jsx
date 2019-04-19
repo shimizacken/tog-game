@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Slider from 'react-input-slider';
 import DrivingButton from '../driveDashboard/components/driveButton';
