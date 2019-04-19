@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import rangeMapper from 'range-mapper';
 import DrivingButtonStates from '../features/driveDashboard/services/ui/enums/drivingButtonStates';
 import DrivingDashboardContainer from '../features/driveDashboard';
-import Speedometer from '../components/common/speedometer';
+import Speedometer from '../features/speedometer';
 import ControlCenterDisplayContainer from '../features/controlCenterDisplay';
 import calculateDrivingStatus from '../features/driveDashboard/services/ui/calculateDrivingStatus';
 import calculateShakeClassName from '../features/driveDashboard/services/ui/calculateShakeClassName';
