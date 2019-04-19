@@ -1,19 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
-import rangeMapper from 'range-mapper';
 import styles from './index.module.scss';
 
 const Speedometer = ({speed}) => {
-
-    const interpolate = rangeMapper.clamped(0, 100, -90, 90);
-
-    let deg = interpolate(speed);
 
     return <div className={styles.root}>
         <div
             className={styles.hand}
             style={{
-                transform: `rotate(${deg}deg)`
+                transform: `rotate(${speed}deg)`
             }}
         >
         </div>
@@ -23,5 +18,7 @@ const Speedometer = ({speed}) => {
         <span className={classNames(styles.label, styles.label100)}>100</span>
     </div>;
 };
+
+
 
 export default Speedometer;
