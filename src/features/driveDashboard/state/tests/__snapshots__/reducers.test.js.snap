@@ -3,6 +3,7 @@
 exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set DRIVE with initial state 1`] = `
 Object {
   "drivingButtonState": "DRIVE",
+  "drivingStatus": false,
   "throttleSpeed": 0,
 }
 `;
@@ -10,6 +11,7 @@ Object {
 exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set ERROR with initial state 1`] = `
 Object {
   "drivingButtonState": "ERROR",
+  "drivingStatus": false,
   "throttleSpeed": 0,
 }
 `;
@@ -31,6 +33,7 @@ Object {
 exports[`driveDashboard reducer test suite SET_DRIVE_BUTTON_STATUS test suite should set TURNED_OFF with initial state 1`] = `
 Object {
   "drivingButtonState": "TURNED_OFF",
+  "drivingStatus": false,
   "throttleSpeed": 0,
 }
 `;
@@ -38,6 +41,7 @@ Object {
 exports[`driveDashboard reducer test suite SET_THROTTLE_SPEED test suite should set throttle speed to 20 with initial state 1`] = `
 Object {
   "drivingButtonState": "TURNED_OFF",
+  "drivingStatus": false,
   "throttleSpeed": 20,
 }
 `;
@@ -52,6 +56,7 @@ Object {
 exports[`driveDashboard reducer test suite initial state test suite should return initial state 1`] = `
 Object {
   "drivingButtonState": "TURNED_OFF",
+  "drivingStatus": false,
   "throttleSpeed": 0,
 }
 `;
