@@ -21,6 +21,10 @@
     border-radius: 50px;
 
     .screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       width: 90%;
       height: 90%;
       border: 3px solid gray;

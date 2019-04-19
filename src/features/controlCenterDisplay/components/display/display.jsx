@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import styles from './index.module.scss';
 
-const Display = React.memo(({drivingInfo}) => {
+const Display = React.memo(({drivingInfo, warningInfo}) => {
 
     return <div className={styles.root}>
                 <div className={styles.innerWrapper}>
@@ -10,17 +10,22 @@ const Display = React.memo(({drivingInfo}) => {
                         <span className={styles.text}>
                             {drivingInfo}
                         </span>
+                        <span className={styles.text}>
+                            {warningInfo}
+                        </span>
                     </div>
                 </div>
            </div>;
 });
 
 Display.propTypes = {
-    drivingInfo: PropTypes.string
+    drivingInfo: PropTypes.string,
+    warningInfo: PropTypes.string
 };
 
 Display.defaultTypes = {
-    drivingInfo: undefined
+    drivingInfo: undefined,
+    warningInfo: undefined
 };
 
 export default Display;
