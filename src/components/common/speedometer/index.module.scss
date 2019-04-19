@@ -1,0 +1,62 @@
+@import "../../../styles/colors";
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width: 200px;
+  height: 200px;
+
+  border: 3px solid $drive-button-border;
+  border-radius: 50%;
+
+  .innercover {
+    position: absolute;
+    top: 55%;
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background-color: #333333;
+    box-shadow: 2px 3px 8px #999999;
+  }
+
+  .hand {
+    display: block;
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+    border-width: 0 20px 80px 20px;
+    border-color: transparent transparent black transparent;
+
+    transform-origin: 20px 75px;
+    transition: transform 3s ease-in-out;
+  }
+
+  .label {
+    position: absolute;
+    font-weight: bold;
+    font-style: italic;
+    color: #444444;
+  }
+
+  .label0 {
+    left: 10px;
+    margin-top: 34px;
+  }
+
+  .label50 {
+    top: 3px;
+  }
+
+  .label100 {
+    right: 10px;
+    margin-top: 34px;
+  }
+}

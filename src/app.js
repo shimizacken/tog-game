@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className={styles.app}>
-          <DrivingDashboardContainer />
+            <DrivingDashboardContainer />
         </div>
       </Provider>
     );
