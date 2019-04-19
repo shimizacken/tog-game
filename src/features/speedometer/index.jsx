@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import rangeMapper from 'range-mapper';
-import Speedometer from './speedometer';
+import Speedometer from './components/speedometer';
 import DrivingButtonStates from '../driveDashboard/services/ui/enums/drivingButtonStates';
 
 const SpeedometerContainer = ({drivingButtonState, throttleSpeed}) => {
