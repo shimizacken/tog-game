@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import rangeMapper from 'range-mapper';
-import DrivingButtonStates from './features/driveDashboard/services/ui/enums/drivingButtonStates';
-import DrivingDashboardContainer from './features/driveDashboard';
-import Speedometer from './components/common/speedometer';
-import ControlCenterDisplayContainer from './features/controlCenterDisplay';
+import DrivingButtonStates from '../features/driveDashboard/services/ui/enums/drivingButtonStates';
+import DrivingDashboardContainer from '../features/driveDashboard';
+import Speedometer from '../components/common/speedometer';
+import ControlCenterDisplayContainer from '../features/controlCenterDisplay';
 
-const MainTempContainer = ({drivingButtonState, throttleSpeed}) => {
+const RootContainer = ({drivingButtonState, throttleSpeed}) => {
 
     const interpolate = rangeMapper.clamped(0, 100, -90, 90);
 
@@ -24,9 +24,4 @@ const mapStateToProps = state => ({
     throttleSpeed: state.driveDashboard.throttleSpeed
 });
 
-// const mapDispatchToProps = {
-//     setDrivingButtonState,
-//     setThrottleSpeed
-// };
-
-export default connect(mapStateToProps)(MainTempContainer);
+export default connect(mapStateToProps)(RootContainer);
