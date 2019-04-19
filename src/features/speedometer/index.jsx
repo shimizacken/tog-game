@@ -1,27 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import styles from './index.module.scss';
+import { connect } from 'react-redux';
+import rangeMapper from 'range-mapper';
+import Speedometer from './speedometer';
+import DrivingButtonStates from '../driveDashboard/services/ui/enums/drivingButtonStates';
 
-const Speedometer = React.memo(({speed}) => (
-    <div className={styles.root}>
-        <div
-            className={styles.hand}
-            style={{
-                transform: `rotate(${speed}deg)`
-            }}
-        >
-        </div>
-        <div className={styles.innerCircle}></div>
-        <div className={styles.innercover}></div>
-        <span className={classNames(styles.label, styles.label0)}>0</span>
-        <span className={classNames(styles.label, styles.label50)}>50</span>
-        <span className={classNames(styles.label, styles.label100)}>100</span>
-    </div>
-));
+const SpeedometerContainer = ({drivingButtonState, throttleSpeed}) => {
+    
+    const interpolate = rangeMapper.clamped(0, 100, -90, 90);
 
-Speedometer.propTypes = {
-    speed: PropTypes.number.isRequired
+    return <Speedometer 
+        speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)}
+    />;
 };
 
-export default Speedometer;
+const mapStateToProps = state => ({
+    drivingButtonState: state.driveDashboard.drivingButtonState,
+    throttleSpeed: state.driveDashboard.throttleSpeed
+});
+
+export default connect(mapStateToProps)(SpeedometerContainer);
