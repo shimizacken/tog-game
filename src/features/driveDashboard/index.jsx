@@ -4,8 +4,6 @@ import Slider from 'react-input-slider';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
-import calculateDrivingStatus from './services/ui/calculateDrivingStatus';
-import calculateShakeClassName from './services/ui/calculateShakeClassName';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
 import styles from './index.module.scss';
 
@@ -14,15 +12,12 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     const click = () => setDrivingButtonState(calculateDrivingButtonState(drivingButtonState).drivingButtonStates);
     const change = (axis) => setThrottleSpeed(axis.y);
 
-    const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed));
-    const shakeClassName = useMemo(() => calculateShakeClassName(drivingStatus, throttleSpeed, styles));
-
     useEffect(() => {
         setDrivingButtonState(DrivingButtonStates.READY);
     }, []);
 
     return (
-        <div className={shakeClassName}>
+        <div>
             <div className={styles.root}>
                 <div className={styles.innerwrapper}>
                     <div>
