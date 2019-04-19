@@ -4,6 +4,7 @@ import rangeMapper from 'range-mapper';
 import DrivingButtonStates from './features/driveDashboard/services/ui/enums/drivingButtonStates';
 import DrivingDashboardContainer from './features/driveDashboard';
 import Speedometer from './components/common/speedometer';
+import ControlCenterDisplayContainer from './features/controlCenterDisplay';
 
 const MainTempContainer = ({drivingButtonState, throttleSpeed}) => {
 
@@ -11,6 +12,7 @@ const MainTempContainer = ({drivingButtonState, throttleSpeed}) => {
 
     return (
         <div>
+            <ControlCenterDisplayContainer />
             <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
             <DrivingDashboardContainer />
         </div>

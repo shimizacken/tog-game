@@ -23,41 +23,36 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
 
     return (
         <div className={shakeClassName}>
-            <div>
-                <h1>
-                    {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
-                </h1>
-            </div>
-        <div className={styles.root}>
-            <div className={styles.innerwrapper}>
-                <div>
-                    <DrivingButton 
-                        drivingButtonStates={drivingButtonState}
-                        onClick={click}
-                    />
-                </div>
-                <div>
-                    <Slider 
-                        onChange={change}
-                        axis='y'
-                        y={throttleSpeed}
-                        styles={{
-                            track: {
-                              backgroundColor: '#434343'
-                            },
-                            active: {
-                              backgroundColor: '#222222'
-                            },
-                            thumb: {
-                              width: 80,
-                              height: 80,
-                              backgroundColor: '#e06666'
-                            }
-                        }}
-                    />
+            <div className={styles.root}>
+                <div className={styles.innerwrapper}>
+                    <div>
+                        <DrivingButton 
+                            drivingButtonStates={drivingButtonState}
+                            onClick={click}
+                        />
+                    </div>
+                    <div>
+                        <Slider 
+                            onChange={change}
+                            axis='y'
+                            y={throttleSpeed}
+                            styles={{
+                                track: {
+                                backgroundColor: '#434343'
+                                },
+                                active: {
+                                backgroundColor: '#222222'
+                                },
+                                thumb: {
+                                width: 80,
+                                height: 80,
+                                backgroundColor: '#e06666'
+                                }
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
         </div>);
 };
 
