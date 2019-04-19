@@ -7,7 +7,7 @@ import calculateDrivingButtonState from './services/ui/calculateDrivingButtonSta
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
 import styles from './index.module.scss';
 
-const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
+const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed, drivingStatus}) => {
 
     const click = () => setDrivingButtonState(calculateDrivingButtonState(drivingButtonState).drivingButtonStates);
     const change = (axis) => setThrottleSpeed(axis.y);

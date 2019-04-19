@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import calculateDrivingStatus from '../driveDashboard/services/ui/calculateDrivingStatus';
 import Display from './components/display/display';
 
-const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed}) => {
-
-    const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed));
+const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed, drivingStatus}) => {
     
     return <div>
                 <Display 
@@ -17,7 +15,8 @@ const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed}) => {
 
 const mapStateToProps = state => ({
     drivingButtonState: state.driveDashboard.drivingButtonState,
-    throttleSpeed: state.driveDashboard.throttleSpeed
+    throttleSpeed: state.driveDashboard.throttleSpeed,
+    drivingStatus: state.driveDashboard.drivingStatus
 });
 
 export default connect(mapStateToProps)(ControlCenterDisplayContainer);
