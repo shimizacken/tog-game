@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-const Speedometer = ({speed}) => {
+const Speedometer = React.memo(({speed}) => {
 
     return <div className={styles.root}>
         <div
@@ -17,8 +18,10 @@ const Speedometer = ({speed}) => {
         <span className={classNames(styles.label, styles.label50)}>50</span>
         <span className={classNames(styles.label, styles.label100)}>100</span>
     </div>;
+});
+
+Speedometer.propTypes = {
+    speed: PropTypes.number.isRequired
 };
-
-
 
 export default Speedometer;
