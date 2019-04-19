@@ -1,15 +1,14 @@
 import React, { useMemo } from 'react';
 import { connect } from 'react-redux';
 import calculateDrivingStatus from '../driveDashboard/services/ui/calculateDrivingStatus';
+import Display from './display';
 
 const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed}) => {
 
     const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed));
     
     return <div>
-                <h1>
-                    {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
-                </h1>
+                <Display />
             </div>;
 };
 

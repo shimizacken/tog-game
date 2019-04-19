@@ -17,8 +17,10 @@ const RootContainer = ({drivingButtonState, throttleSpeed}) => {
 
     return (
         <div className={shakeClassName}>
-            <ControlCenterDisplayContainer />
-            <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
+            <div className={styles.innerWrapper}>
+                <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
+                <ControlCenterDisplayContainer />
+            </div>
             <DrivingDashboardContainer />
         </div>
     );

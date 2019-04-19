@@ -1,0 +1,41 @@
+.root {
+  width: 350px;
+  height: 240px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 10px solid gray;
+  border-radius: 50px;
+  background-color: #efefef;
+
+  .innerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    height: 90%;
+    border: 3px solid #ffffff;
+    border-radius: 50px;
+
+    .screen {
+      width: 90%;
+      height: 90%;
+      border: 3px solid gray;
+      border-radius: 50px;
+
+      background-color: #343530;
+
+      overflow: hidden;
+
+      .text {
+        color: #ffffff;
+        font-size: 18px;
+        display: inline-block;
+        margin: 20px;
+      }
+    }
+  }
+}
