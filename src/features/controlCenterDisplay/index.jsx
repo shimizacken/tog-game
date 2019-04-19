@@ -1,6 +1,5 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import calculateDrivingStatus from '../driveDashboard/services/ui/calculateDrivingStatus';
 import Display from './components/display/display';
 
 const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed, drivingStatus}) => {
