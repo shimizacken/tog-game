@@ -11,7 +11,7 @@ const Display = React.memo(({drivingInfo, warningInfo}) => {
                             {drivingInfo}
                         </div>
                         <div className={styles.text}>
-                            {warningInfo} dfsd fsdf sdf 
+                            {warningInfo}
                         </div>
                     </div>
                 </div>

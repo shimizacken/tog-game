@@ -5,14 +5,14 @@ import DrivingButtonStates from '../driveDashboard/services/ui/enums/drivingButt
 
 const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed, drivingStatus}) => {
     
-    const drive = drivingStatus ? 'Tod driving' : '';
+    const drive = drivingStatus ? 'Tog is driving' : '';
     const buttonStatus = drivingButtonState !== DrivingButtonStates.SWITCHING ? drivingButtonState : '';
     const drivingInfo = `${buttonStatus} ${drive} Speed: ${throttleSpeed}`;
 
     return <div>
                 <Display 
                     drivingInfo={drivingInfo}
-                    //warningInfo='some warnings!'
+                    warningInfo='some warnings!'
                 />
             </div>;
 };
