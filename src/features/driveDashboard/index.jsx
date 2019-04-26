@@ -34,21 +34,17 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
         <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
         <div className={styles.root}>
             <div className={styles.innerwrapper}>
-                <div>
-                    <DrivingButton 
-                        drivingButtonStates={drivingButtonState}
-                        onClick={click}
-                    />
-                </div>
-                <div>
-                    <ThrottleStick 
-                        onChange={change}
-                        speed={throttleSpeed}
-                    />
-                </div>
+                <DrivingButton 
+                    drivingButtonStates={drivingButtonState}
+                    onClick={click}
+                />
+                <ThrottleStick 
+                    onChange={change}
+                    speed={throttleSpeed}
+                />
             </div>
         </div>
-        </div>);
+    </div>);
 };
 
 const mapStateToProps = state => ({
