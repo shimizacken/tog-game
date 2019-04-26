@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo } from 'react';
 import { connect } from 'react-redux';
-import Slider from 'react-input-slider';
 import rangeMapper from 'range-mapper';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
@@ -9,6 +8,7 @@ import calculateDrivingStatus from './services/ui/calculateDrivingStatus';
 import calculateShakeClassName from './services/ui/calculateShakeClassName';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
 import Speedometer from '../../components/common/speedometer';
+import ThrottleStick from './components/throttleStick';
 import styles from './index.module.scss';
 
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
@@ -41,23 +41,9 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
                     />
                 </div>
                 <div>
-                    <Slider 
+                    <ThrottleStick 
                         onChange={change}
-                        axis='y'
-                        y={throttleSpeed}
-                        styles={{
-                            track: {
-                              backgroundColor: '#434343'
-                            },
-                            active: {
-                              backgroundColor: '#222222'
-                            },
-                            thumb: {
-                              width: 80,
-                              height: 80,
-                              backgroundColor: '#e06666'
-                            }
-                        }}
+                        speed={throttleSpeed}
                     />
                 </div>
             </div>
