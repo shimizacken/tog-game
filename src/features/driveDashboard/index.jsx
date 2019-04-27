@@ -1,24 +1,18 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import rangeMapper from 'range-mapper';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
-import calculateDrivingStatus from './services/ui/calculateDrivingStatus';
-import calculateShakeClassName from './services/ui/calculateShakeClassName';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
 import Speedometer from '../../components/common/speedometer';
 import ThrottleStick from './components/throttleStick';
 import styles from './index.module.scss';
 
-const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed}) => {
+const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed, drivingStatus}) => {
 
     const click = () => setDrivingButtonState(calculateDrivingButtonState(drivingButtonState).drivingButtonStates);
     const change = (axis) => setThrottleSpeed(axis.y);
-
-    const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed));
-    const shakeClassName = useMemo(() => calculateShakeClassName(drivingStatus, throttleSpeed, styles));
-    const interpolate = rangeMapper.clamped(0, 100, -90, 90);
 
     useEffect(() => {
         setDrivingButtonState(DrivingButtonStates.READY);
