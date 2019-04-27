@@ -1,29 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Panel from '../../components/panel';
-import Button from '../../components/button';
 import { 
     setFrontLightState,
     setBackLightState,
     setCabinLightState,
     setWagonsLightState
 } from './state/actions';
-import styles from './index.module.scss';
+import LightButton from './components/lightButton';
 
 const LightsPanelContainer = (
-    {toggleFrontLights,
-    toggleBackLights,
-    toggleCabinLights,
-    toggleWagonsLights}) => 
+    {
+        frontLightsState,
+        backLightsState,
+        cabinLightsState,
+        wagonsLightsState,
+        toggleFrontLights,
+        toggleBackLights,
+        toggleCabinLights,
+        toggleWagonsLights
+    }) => 
     <Panel>
-        <Button className={styles.button} text={'Front'} onClick={toggleFrontLights} />
-        <Button className={styles.button} text={'Back'} onClick={toggleBackLights} />
-        <Button className={styles.button} text={'Cabin'} onClick={toggleCabinLights} />
-        <Button className={styles.button} text={'Wagons'} onClick={toggleWagonsLights} />
+        <LightButton enabled={frontLightsState} text={'Front'} onClick={toggleFrontLights} />
+        <LightButton enabled={backLightsState} text={'Back'} onClick={toggleBackLights} />
+        <LightButton enabled={cabinLightsState} text={'Cabin'} onClick={toggleCabinLights} />
+        <LightButton enabled={wagonsLightsState} text={'Wagons'} onClick={toggleWagonsLights} />
     </Panel>;
 
 const mapStateToProps = state => ({
-    lights: state.lights
+    frontLightsState: state.lights.frontLightsState,
+    backLightsState: state.lights.backLightsState,
+    cabinLightsState: state.lights.cabinLightsState,
+    wagonsLightsState: state.lights.wagonsLightsState
 });
 
 const mapDispatchToProps = dispatch => ({
