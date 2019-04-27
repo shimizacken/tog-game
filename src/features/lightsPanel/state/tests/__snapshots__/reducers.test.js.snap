@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lights reducer test suite back lights should change the back light to on 1`] = `
+Object {
+  "backLightsState": "ON",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite back lights should set back light off 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite back lights should set back light on 1`] = `
+Object {
+  "backLightsState": "ON",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite back lights should set front back error 1`] = `
+Object {
+  "backLightsState": "ERROR",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite cabin lights should change the cabin light to on 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "ON",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite cabin lights should set cabin light off 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite cabin lights should set cabin light on 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "ON",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite cabin lights should set front cabin error 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "ERROR",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite front lights should change the front light to on 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "ON",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite front lights should set front light error 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "ERROR",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite front lights should set front light off 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite front lights should set front light on 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "ON",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite initial states should return initial state 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite wagons lights should change the wagons light to on 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "ON",
+}
+`;
+
+exports[`lights reducer test suite wagons lights should set front wagons error 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "ERROR",
+}
+`;
+
+exports[`lights reducer test suite wagons lights should set wagons light off 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "OFF",
+}
+`;
+
+exports[`lights reducer test suite wagons lights should set wagons light on 1`] = `
+Object {
+  "backLightsState": "OFF",
+  "cabinLightsState": "OFF",
+  "frontLightsState": "OFF",
+  "wagonsLightsState": "ON",
+}
+`;

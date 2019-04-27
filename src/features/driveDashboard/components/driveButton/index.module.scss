@@ -1,14 +1,6 @@
 @import "../../../../styles/colors";
 
 button.root {
-  width: 150px;
-  height: 150px;
-
-  border-radius: 50%;
-  border: 10px solid $drive-button-border;
-
-  cursor: pointer;
-
   &:focus {
     outline: 0;
   }
