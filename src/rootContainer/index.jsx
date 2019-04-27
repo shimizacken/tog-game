@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import DrivingDashboardContainer from '../features/driveDashboard';
 import SpeedometerContainer from '../features/speedometer';
 import ControlCenterDisplayContainer from '../features/controlCenterDisplay';
+import LightsPanelContainer from '../features/lightsPanel';
 import calculateDrivingStatus from '../features/driveDashboard/services/ui/calculateDrivingStatus';
 import calculateShakeClassName from '../features/driveDashboard/services/ui/calculateShakeClassName';
 import { setDrivingStatus } from '../features/driveDashboard/state/actions';
@@ -22,6 +23,7 @@ const RootContainer = ({drivingButtonState, throttleSpeed, setDrivingStatus}) =>
             <div className={styles.innerWrapper}>
                 <SpeedometerContainer />
                 <ControlCenterDisplayContainer />
+                <LightsPanelContainer />
             </div>
             <DrivingDashboardContainer />
         </div>
