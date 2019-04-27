@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import Panel from '../../components/panel';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
 import ThrottleStick from './components/throttleStick';
-import styles from './index.module.scss';
 
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed, drivingStatus}) => {
 
@@ -17,18 +17,16 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     }, []);
 
     return (
-        <div className={styles.root}>
-            <div className={styles.innerwrapper}>
-                <DrivingButton 
-                    drivingButtonStates={drivingButtonState}
-                    onClick={click}
-                />
-                <ThrottleStick 
-                    onChange={change}
-                    speed={throttleSpeed}
-                />
-            </div>
-        </div>
+        <Panel width='70vw' height='50vh' minWidth='350px'>
+            <DrivingButton 
+                drivingButtonStates={drivingButtonState}
+                onClick={click}
+            />
+            <ThrottleStick 
+                onChange={change}
+                speed={throttleSpeed}
+            />
+        </Panel>
     );
 };
 
