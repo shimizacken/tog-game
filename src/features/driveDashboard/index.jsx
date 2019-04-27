@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import rangeMapper from 'range-mapper';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
-import Speedometer from '../../components/common/speedometer';
 import ThrottleStick from './components/throttleStick';
 import styles from './index.module.scss';
 
@@ -19,13 +17,6 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     }, []);
 
     return (
-        <div className={shakeClassName}>
-            <div>
-                <h1>
-                    {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
-                </h1>
-            </div>
-        <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
         <div className={styles.root}>
             <div className={styles.innerwrapper}>
                 <DrivingButton 
@@ -38,7 +29,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
                 />
             </div>
         </div>
-    </div>);
+    );
 };
 
 const mapStateToProps = state => ({
