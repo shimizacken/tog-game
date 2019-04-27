@@ -1,4 +1,4 @@
-@import "../../styles/colors";
+@import "../../styles/_colors.scss";
 
 .root {
   display: flex;
@@ -7,16 +7,12 @@
   align-items: center;
   margin: auto auto;
 
-  width: 70vw;
-  height: 50vh;
-  min-width: 350px;
-
   background-color: $gray-dashboard-background;
 
   border: 10px solid gray;
   border-radius: 50px;
 
-  padding: 45px 35px;
+  padding: 3%;
 
   .innerwrapper {
     display: flex;

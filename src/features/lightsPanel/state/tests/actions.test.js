@@ -1,19 +1,24 @@
-import { setFrontLightState } from "../actions";
-import { LightStates } from "../../bl/enums";
+import { setFrontLightState, setBackLightState, setCabinLightState, setWagonsLightState } from "../actions";
 
 describe('lights actions tests', () => {
   
-    it('should turn setFrontLightState on', () => {
-        
-        const frontLightsState = LightStates.ON
+    it('should return setFrontLightState action', () => {
 
-        expect(setFrontLightState(frontLightsState)).toMatchSnapshot();
+        expect(setFrontLightState).toMatchSnapshot();
     });
 
-    it('should turn setFrontLightState off', () => {
+    it('should return setBackLightState', () => {
         
-        const frontLightsState = LightStates.OFF
+        expect(setBackLightState).toMatchSnapshot();
+    });
 
-        expect(setFrontLightState(frontLightsState)).toMatchSnapshot();
+    it('should return setCabinLightState action', () => {
+        
+        expect(setCabinLightState).toMatchSnapshot();
+    });
+
+    it('should return setWagonsLightState action', () => {
+        
+        expect(setWagonsLightState).toMatchSnapshot();
     });
 });

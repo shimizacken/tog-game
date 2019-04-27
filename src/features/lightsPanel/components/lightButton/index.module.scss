@@ -1,0 +1,16 @@
+@import "../../../../styles/_colors.scss";
+
+.button {
+  width: 70px;
+  height: 70px;
+
+  background-color: $drive-button-ready-orange;
+
+  &:hover {
+    border: 10px solid $drive-button-border-hover;
+  }
+
+  &.enabled {
+    background-color: $drive-button-drive-green;
+  }
+}
