@@ -8,6 +8,7 @@ import {
     setWagonsLightState
 } from './state/actions';
 import LightButton from './components/lightButton';
+import styles from './index.module.scss';
 
 const LightsPanelContainer = (
     {
@@ -20,13 +21,15 @@ const LightsPanelContainer = (
         toggleCabinLights,
         toggleWagonsLights
     }) => 
-    <Panel>
-        <div style={{padding: '15px'}}>
-            <LightButton enabled={frontLightsState} text={'Front'} onClick={toggleFrontLights} />
-            <LightButton enabled={backLightsState} text={'Back'} onClick={toggleBackLights} />
-            <LightButton enabled={cabinLightsState} text={'Cabin'} onClick={toggleCabinLights} />
-            <LightButton enabled={wagonsLightsState} text={'Wagons'} onClick={toggleWagonsLights} />
-        </div>
+    <Panel 
+        classNameInnerWrapper={styles.buttons}
+        width={200}
+        height={200}
+    >
+        <LightButton enabled={frontLightsState} text={'Front'} onClick={toggleFrontLights} />
+        <LightButton enabled={backLightsState} text={'Back'} onClick={toggleBackLights} />
+        <LightButton enabled={cabinLightsState} text={'Cabin'} onClick={toggleCabinLights} />
+        <LightButton enabled={wagonsLightsState} text={'Wagons'} onClick={toggleWagonsLights} />
     </Panel>;
 
 const mapStateToProps = state => ({
