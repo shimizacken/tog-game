@@ -10,12 +10,12 @@ export const setBackLightState = backLightsState => ({
     backLightsState
 });
 
-export const setCabinLightState = cabinLights => ({
+export const setCabinLightState = cabinLightsState => ({
     type: SET_CABIN_LIGHT_STATE,
-    cabinLights
+    cabinLightsState
 });
 
-export const setWagonsLightState = wagonsLights => ({
+export const setWagonsLightState = wagonsLightsState => ({
     type: SET_WAGON_LIGHT_STATE,
-    wagonsLights
+    wagonsLightsState
 });
