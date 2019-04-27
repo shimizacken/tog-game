@@ -1,8 +1,4 @@
-const LightStates = {
-    OFF: 'OFF',
-    ON: 'ON',
-    ERROR: 'ERROR'
-};
+import { LightStates } from "../bl/enums";
 
 const lightsInitialState = {
     frontLightsState: LightStates.ON,

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lights actions tests should turn setFrontLightState off 1`] = `
+Object {
+  "frontLightsState": "OFF",
+  "type": "SET_FRONT_LIGHT_STATE",
+}
+`;
+
+exports[`lights actions tests should turn setFrontLightState on 1`] = `
+Object {
+  "frontLightsState": "ON",
+  "type": "SET_FRONT_LIGHT_STATE",
+}
+`;
