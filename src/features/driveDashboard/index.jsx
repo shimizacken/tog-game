@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import Slider from 'react-input-slider';
+import rangeMapper from 'range-mapper';
 import DrivingButton from '../driveDashboard/components/driveButton';
 import { setDrivingButtonState, setThrottleSpeed } from './state/actions';
 import calculateDrivingButtonState from './services/ui/calculateDrivingButtonState';
 import DrivingButtonStates from './services/ui/enums/drivingButtonStates';
+import Speedometer from '../../components/common/speedometer';
+import ThrottleStick from './components/throttleStick';
 import styles from './index.module.scss';
 
 const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivingButtonState, setThrottleSpeed, drivingStatus}) => {
@@ -17,38 +19,26 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
     }, []);
 
     return (
-        <div>
-            <div className={styles.root}>
-                <div className={styles.innerwrapper}>
-                    <div>
-                        <DrivingButton 
-                            drivingButtonStates={drivingButtonState}
-                            onClick={click}
-                        />
-                    </div>
-                    <div>
-                        <Slider 
-                            onChange={change}
-                            axis='y'
-                            y={throttleSpeed}
-                            styles={{
-                                track: {
-                                backgroundColor: '#434343'
-                                },
-                                active: {
-                                backgroundColor: '#222222'
-                                },
-                                thumb: {
-                                width: 80,
-                                height: 80,
-                                backgroundColor: '#e06666'
-                                }
-                            }}
-                        />
-                    </div>
-                </div>
+        <div className={shakeClassName}>
+            <div>
+                <h1>
+                    {drivingButtonState} {throttleSpeed} {drivingStatus && 'DRIVING'}
+                </h1>
             </div>
-        </div>);
+        <Speedometer speed={drivingButtonState === DrivingButtonStates.DRIVE ? interpolate(throttleSpeed) : interpolate(0)} />
+        <div className={styles.root}>
+            <div className={styles.innerwrapper}>
+                <DrivingButton 
+                    drivingButtonStates={drivingButtonState}
+                    onClick={click}
+                />
+                <ThrottleStick 
+                    onChange={change}
+                    speed={throttleSpeed}
+                />
+            </div>
+        </div>
+    </div>);
 };
 
 const mapStateToProps = state => ({
