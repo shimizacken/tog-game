@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import DrivingButtonStates from '../../services/ui/enums/drivingButtonStates';
+import Button from '../../../../components/button';
 import styles from './index.module.scss';
 
 const DriveButton = React.memo(({drivingButtonStates, onClick}) => {
@@ -29,11 +30,11 @@ const DriveButton = React.memo(({drivingButtonStates, onClick}) => {
     }
 
     return (
-        <button 
+        <Button 
             className={classNames(styles.root, color)}
             onClick={onClick}
         >
-        </button>);
+        </Button>);
 });
 
 DriveButton.propTypes = {
