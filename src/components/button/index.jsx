@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 
-const Button = React.memo(({className, text, onClick}) => {
-
-    return (
-        <button 
-            className={classNames(styles.root, className)}
-            onClick={onClick}
-        >
+const Button = React.memo(({className, text, onClick}) => 
+    <button 
+        className={classNames(styles.root, className)}
+        onClick={onClick}
+    >
         {text}
-        </button>);
-});
+    </button>
+);
 
 Button.propTypes = {
     className: PropTypes.string,
