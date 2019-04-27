@@ -21,10 +21,12 @@ const LightsPanelContainer = (
         toggleWagonsLights
     }) => 
     <Panel>
-        <LightButton enabled={frontLightsState} text={'Front'} onClick={toggleFrontLights} />
-        <LightButton enabled={backLightsState} text={'Back'} onClick={toggleBackLights} />
-        <LightButton enabled={cabinLightsState} text={'Cabin'} onClick={toggleCabinLights} />
-        <LightButton enabled={wagonsLightsState} text={'Wagons'} onClick={toggleWagonsLights} />
+        <div style={{padding: '15px'}}>
+            <LightButton enabled={frontLightsState} text={'Front'} onClick={toggleFrontLights} />
+            <LightButton enabled={backLightsState} text={'Back'} onClick={toggleBackLights} />
+            <LightButton enabled={cabinLightsState} text={'Cabin'} onClick={toggleCabinLights} />
+            <LightButton enabled={wagonsLightsState} text={'Wagons'} onClick={toggleWagonsLights} />
+        </div>
     </Panel>;
 
 const mapStateToProps = state => ({
