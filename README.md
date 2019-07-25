@@ -10,3 +10,6 @@
 - Driving dashboard
 
 ![tog game](./src/assets/readme/tog-game-printscreen.png)
+
+### Workflow Diagram
+![tog game](./src/assets/readme/workflow-diagram.png)
