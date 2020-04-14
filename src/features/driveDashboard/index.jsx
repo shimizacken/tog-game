@@ -14,6 +14,7 @@ const DrivingDashboardContainer = ({drivingButtonState, throttleSpeed, setDrivin
 
     useEffect(() => {
         setDrivingButtonState(DrivingButtonStates.READY);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
