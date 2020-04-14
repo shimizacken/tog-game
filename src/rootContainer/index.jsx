@@ -11,8 +11,8 @@ import styles from './index.module.scss';
 
 const RootContainer = ({drivingButtonState, throttleSpeed, setDrivingStatus}) => {
     
-    const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed));
-    const shakeClassName = useMemo(() => calculateShakeClassName(drivingStatus, throttleSpeed, styles));
+    const drivingStatus = useMemo(() => calculateDrivingStatus(drivingButtonState, throttleSpeed), [drivingButtonState, throttleSpeed]);
+    const shakeClassName = useMemo(() => calculateShakeClassName(drivingStatus, throttleSpeed, styles), [drivingStatus, throttleSpeed]);
 
     useEffect(() => {
         setDrivingStatus(drivingStatus);
