@@ -1,6 +1,6 @@
 # tog-game
 
-### "tog" in Norwegian is a train. This project purpose is educational to give example how a production feature should be plan and develop, with the following features and patterns:
+🚂 "tog" is train in Norwegian. This is an educational project which its goal is to give example how a production feature should be plan and develop, from the planing til the state, bll and UI layers. It includes the following features and patterns:
 - Feature based
 - Hooks
 - Functional
