@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Panel } from "../../components/panel/Panel";
 import { DrivingButton } from "./components/driveButton/DrivingButton";
 import { DrivingButtonStates } from "./services/ui/enums/drivingButtonStates";
@@ -7,20 +7,25 @@ import { ThrottleStick } from "./components/throttleStick/ThrottleStick";
 import { setDrivingButtonState, setThrottleSpeed } from "./state/actions";
 import { calculateDrivingButtonState } from "./services/ui/calculateDrivingButtonState/calculateDrivingButtonState";
 
-const DrivingDashboardContainer = ({
-  drivingButtonState,
-  throttleSpeed,
-  setDrivingButtonState,
-  setThrottleSpeed,
-}) => {
+export const DrivingDashboardContainer = () => {
+  const dispatch = useDispatch();
+  const drivingButtonState = useSelector(
+    (state) => state.driveDashboard.drivingButtonState
+  );
+  const throttleSpeed = useSelector(
+    (state) => state.driveDashboard.throttleSpeed
+  );
+
   const click = () =>
-    setDrivingButtonState(
-      calculateDrivingButtonState(drivingButtonState).drivingButtonStates
+    dispatch(
+      setDrivingButtonState(
+        calculateDrivingButtonState(drivingButtonState).drivingButtonStates
+      )
     );
-  const change = (axis) => setThrottleSpeed(axis.y);
+  const change = (axis) => dispatch(setThrottleSpeed(axis.y));
 
   useEffect(() => {
-    setDrivingButtonState(DrivingButtonStates.READY);
+    dispatch(setDrivingButtonState(DrivingButtonStates.READY));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -31,20 +36,3 @@ const DrivingDashboardContainer = ({
     </Panel>
   );
 };
-
-const mapStateToProps = (state) => ({
-  drivingButtonState: state.driveDashboard.drivingButtonState,
-  throttleSpeed: state.driveDashboard.throttleSpeed,
-});
-
-const mapDispatchToProps = {
-  setDrivingButtonState,
-  setThrottleSpeed,
-};
-
-const connected = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DrivingDashboardContainer);
-
-export { connected as DrivingDashboardContainer };
