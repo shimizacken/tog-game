@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Display } from "./components/display/Display";
+import { Display } from "./components/display/display";
 import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
 
 const ControlCenterDisplayContainer = ({

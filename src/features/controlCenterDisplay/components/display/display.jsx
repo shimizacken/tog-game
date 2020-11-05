@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Display.module.scss";
 
-const Display = React.memo(({ drivingInfo, warningInfo }) => {
+export const Display = React.memo(({ drivingInfo, warningInfo }) => {
   return (
     <div className={styles.root}>
       <div className={styles.innerWrapper}>
@@ -24,5 +24,3 @@ Display.defaultTypes = {
   drivingInfo: undefined,
   warningInfo: undefined,
 };
-
-export { Display };

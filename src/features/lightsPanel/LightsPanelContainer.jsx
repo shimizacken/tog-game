@@ -63,4 +63,4 @@ const connected = connect(
   mapDispatchToProps
 )(LightsPanelContainer);
 
-export { connect as LightsPanelContainer };
+export { connected as LightsPanelContainer };
