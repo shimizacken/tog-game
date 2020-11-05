@@ -1,5 +1,5 @@
-import DrivingButtonStates from "../enums/drivingButtonStates";
-import DrivingButtonColors from "../enums/drivingButtonColors";
+import { DrivingButtonStates } from "../enums/drivingButtonStates";
+import { DrivingButtonColors } from "../enums/drivingButtonColors";
 
 const States = {
   [DrivingButtonStates.TURNED_OFF]: {

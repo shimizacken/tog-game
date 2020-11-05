@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import rangeMapper from "range-mapper";
-import Speedometer from "./components/speedometer/Speedometer";
-import DrivingButtonStates from "../driveDashboard/services/ui/enums/drivingButtonStates";
+import { Speedometer } from "./components/speedometer/Speedometer";
+import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
 
 const SpeedometerContainer = ({ drivingButtonState, throttleSpeed }) => {
   const interpolate = rangeMapper.clamped(0, 100, -90, 90);
@@ -23,4 +23,6 @@ const mapStateToProps = (state) => ({
   throttleSpeed: state.driveDashboard.throttleSpeed,
 });
 
-export default connect(mapStateToProps)(SpeedometerContainer);
+const connected = connect(mapStateToProps)(SpeedometerContainer);
+
+export { connected as SpeedometerContainer };

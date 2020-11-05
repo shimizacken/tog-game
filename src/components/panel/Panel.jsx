@@ -47,4 +47,4 @@ Panel.defaultTypes = {
   minHeight: undefined,
 };
 
-export default Panel;
+export { Panel };

@@ -1,13 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
-import Panel from "../../components/panel/Panel";
+import { Panel } from "../../components/panel/Panel";
+import { LightButton } from "./components/lightButton/LightButton";
 import {
   setFrontLightState,
   setBackLightState,
   setCabinLightState,
   setWagonsLightState,
 } from "./state/actions";
-import LightButton from "./components/lightButton/LightButton";
 import styles from "./LightsPanelContainer.module.scss";
 
 const LightsPanelContainer = ({
@@ -58,7 +58,9 @@ const mapDispatchToProps = (dispatch) => ({
   toggleWagonsLights: () => dispatch(setWagonsLightState),
 });
 
-export default connect(
+const connected = connect(
   mapStateToProps,
   mapDispatchToProps
 )(LightsPanelContainer);
+
+export { connect as LightsPanelContainer };
