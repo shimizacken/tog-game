@@ -1,11 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useMemo } from "react";
+import { useSelector } from "react-redux";
 import rangeMapper from "range-mapper";
 import { Speedometer } from "./components/speedometer/Speedometer";
 import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
 
-const SpeedometerContainer = ({ drivingButtonState, throttleSpeed }) => {
-  const interpolate = rangeMapper.clamped(0, 100, -90, 90);
+export const SpeedometerContainer = () => {
+  const drivingButtonState = useSelector(
+    (state) => state.driveDashboard.drivingButtonState
+  );
+  const throttleSpeed = useSelector(
+    (state) => state.driveDashboard.throttleSpeed
+  );
+
+  const interpolate = useMemo(() => rangeMapper.clamped(0, 100, -90, 90), []);
 
   return (
     <Speedometer
@@ -17,12 +24,3 @@ const SpeedometerContainer = ({ drivingButtonState, throttleSpeed }) => {
     />
   );
 };
-
-const mapStateToProps = (state) => ({
-  drivingButtonState: state.driveDashboard.drivingButtonState,
-  throttleSpeed: state.driveDashboard.throttleSpeed,
-});
-
-const connected = connect(mapStateToProps)(SpeedometerContainer);
-
-export { connected as SpeedometerContainer };
