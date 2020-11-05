@@ -1,26 +1,31 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import Display from './components/display/display';
-import DrivingButtonStates from '../driveDashboard/services/ui/enums/drivingButtonStates';
+import React from "react";
+import { connect } from "react-redux";
+import Display from "./components/display/Display";
+import DrivingButtonStates from "../driveDashboard/services/ui/enums/drivingButtonStates";
 
-const ControlCenterDisplayContainer = ({drivingButtonState, throttleSpeed, drivingStatus}) => {
-    
-    const drive = drivingStatus ? 'Tog is driving' : '';
-    const buttonStatus = drivingButtonState !== DrivingButtonStates.SWITCHING ? drivingButtonState : '';
-    const drivingInfo = `${buttonStatus} ${drive} Speed: ${throttleSpeed}`;
+const ControlCenterDisplayContainer = ({
+  drivingButtonState,
+  throttleSpeed,
+  drivingStatus,
+}) => {
+  const drive = drivingStatus ? "Tog is driving" : "";
+  const buttonStatus =
+    drivingButtonState !== DrivingButtonStates.SWITCHING
+      ? drivingButtonState
+      : "";
+  const drivingInfo = `${buttonStatus} ${drive} Speed: ${throttleSpeed}`;
 
-    return <div>
-                <Display 
-                    drivingInfo={drivingInfo}
-                    warningInfo='some warnings!'
-                />
-            </div>;
+  return (
+    <div>
+      <Display drivingInfo={drivingInfo} warningInfo="some warnings!" />
+    </div>
+  );
 };
 
-const mapStateToProps = state => ({
-    drivingButtonState: state.driveDashboard.drivingButtonState,
-    throttleSpeed: state.driveDashboard.throttleSpeed,
-    drivingStatus: state.driveDashboard.drivingStatus
+const mapStateToProps = (state) => ({
+  drivingButtonState: state.driveDashboard.drivingButtonState,
+  throttleSpeed: state.driveDashboard.throttleSpeed,
+  drivingStatus: state.driveDashboard.drivingStatus,
 });
 
 export default connect(mapStateToProps)(ControlCenterDisplayContainer);
