@@ -4,9 +4,9 @@ import DrivingDashboardContainer from "../features/driveDashboard/DrivingDashboa
 import SpeedometerContainer from "../features/speedometer/SpeedometerContainer";
 import ControlCenterDisplayContainer from "../features/controlCenterDisplay/ControlCenterDisplayContainer";
 import LightsPanelContainer from "../features/lightsPanel/LightsPanelContainer";
-import calculateDrivingStatus from "../features/driveDashboard/services/ui/calculateDrivingStatus";
-import calculateShakeClassName from "../features/driveDashboard/services/ui/calculateShakeClassName";
+import { calculateShakeClassName } from "../features/driveDashboard/services/ui/calculateShakeClassName/calculateShakeClassName";
 import { setDrivingStatus } from "../features/driveDashboard/state/actions";
+import { calculateDrivingStatus } from "../features/driveDashboard/services/ui/calculateDrivingStatus/calculateDrivingStatus";
 import styles from "./RootContainer.module.scss";
 
 const RootContainer = ({

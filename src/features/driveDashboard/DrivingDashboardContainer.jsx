@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Panel from "../../components/panel/Panel";
 import DrivingButton from "./components/driveButton/DriveButton";
+import { calculateDrivingButtonState } from "./services/ui/calculateDrivingButtonState/calculateDrivingButtonState";
 import { setDrivingButtonState, setThrottleSpeed } from "./state/actions";
-import calculateDrivingButtonState from "./services/ui/calculateDrivingButtonState";
 import DrivingButtonStates from "./services/ui/enums/drivingButtonStates";
 import ThrottleStick from "./components/throttleStick/ThrottleStick";
 

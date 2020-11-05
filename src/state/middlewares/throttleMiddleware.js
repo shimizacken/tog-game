@@ -1,27 +1,22 @@
 const throttled = {};
 
-const throttleMiddleware = ({ dispatch, getState }) => next => action => {
+const throttleMiddleware = ({ dispatch, getState }) => (next) => (action) => {
+  const time = action.meta && action.meta.throttle;
 
-    const time = action.meta && action.meta.throttle;
+  if (!time) {
+    return next(action);
+  }
 
-    if (!time) {
-        
-        return next(action);
-    }
+  if (throttled[action.type]) {
+    return;
+  }
 
-    if (throttled[action.type]) {
+  throttled[action.type] = true;
 
-        return;
-    }
-
-    throttled[action.type] = true;
-
-    setTimeout(() => {
-
-        throttled[action.type] = false;
-        next(action);
-        
-    }, time);
+  setTimeout(() => {
+    throttled[action.type] = false;
+    next(action);
+  }, time);
 };
 
 export default throttleMiddleware;
