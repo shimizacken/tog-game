@@ -1,8 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Slider from "react-input-slider";
 
-const ThrottleStick = React.memo(({ onChange, speed }) => (
+export const ThrottleStick: React.FC<{
+  speed: number;
+  onChange: () => void;
+}> = ({ onChange, speed }) => (
   <div>
     <Slider
       onChange={onChange}
@@ -23,16 +25,4 @@ const ThrottleStick = React.memo(({ onChange, speed }) => (
       }}
     />
   </div>
-));
-
-ThrottleStick.propTypes = {
-  onChange: PropTypes.func,
-  speed: PropTypes.number,
-};
-
-ThrottleStick.defaultProps = {
-  onChange: undefined,
-  speed: undefined,
-};
-
-export { ThrottleStick };
+);
