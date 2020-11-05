@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import DrivingButtonStates from "../../services/ui/enums/drivingButtonStates";
 import Button from "../../../../components/button/Button";
-import styles from "./index.module.scss";
+import styles from "./DriveButton.module.scss";
 
 const DriveButton = React.memo(({ drivingButtonStates, onClick }) => {
   let color;

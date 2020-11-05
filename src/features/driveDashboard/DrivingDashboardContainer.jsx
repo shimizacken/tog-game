@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Panel from "../../components/panel/Panel";
-import DrivingButton from "../driveDashboard/components/driveButton";
+import DrivingButton from "./components/driveButton/DriveButton";
 import { setDrivingButtonState, setThrottleSpeed } from "./state/actions";
 import calculateDrivingButtonState from "./services/ui/calculateDrivingButtonState";
 import DrivingButtonStates from "./services/ui/enums/drivingButtonStates";
-import ThrottleStick from "./components/throttleStick";
+import ThrottleStick from "./components/throttleStick/ThrottleStick";
 
 const DrivingDashboardContainer = ({
   drivingButtonState,
