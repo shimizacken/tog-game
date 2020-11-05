@@ -1,5 +1,5 @@
 import React, { useMemo, useEffect } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { DrivingDashboardContainer } from "../features/driveDashboard/DrivingDashboardContainer";
 import { SpeedometerContainer } from "../features/speedometer/SpeedometerContainer";
 import { ControlCenterDisplayContainer } from "../features/controlCenterDisplay/ControlCenterDisplayContainer";
@@ -9,11 +9,15 @@ import { setDrivingStatus } from "../features/driveDashboard/state/actions";
 import { calculateDrivingStatus } from "../features/driveDashboard/services/ui/calculateDrivingStatus/calculateDrivingStatus";
 import styles from "./RootContainer.module.scss";
 
-const RootContainer = ({
-  drivingButtonState,
-  throttleSpeed,
-  setDrivingStatus,
-}) => {
+export const RootContainer = () => {
+  const dispatch = useDispatch();
+  const drivingButtonState = useSelector(
+    (state) => state.driveDashboard.drivingButtonState
+  );
+  const throttleSpeed = useSelector(
+    (state) => state.driveDashboard.throttleSpeed
+  );
+
   const drivingStatus = useMemo(
     () => calculateDrivingStatus(drivingButtonState, throttleSpeed),
     [drivingButtonState, throttleSpeed]
@@ -24,8 +28,8 @@ const RootContainer = ({
   );
 
   useEffect(() => {
-    setDrivingStatus(drivingStatus);
-  });
+    dispatch(setDrivingStatus(drivingStatus));
+  }, [dispatch, drivingStatus]);
 
   return (
     <div className={shakeClassName}>
@@ -38,16 +42,3 @@ const RootContainer = ({
     </div>
   );
 };
-
-const mapStateToProps = (state) => ({
-  drivingButtonState: state.driveDashboard.drivingButtonState,
-  throttleSpeed: state.driveDashboard.throttleSpeed,
-});
-
-const mapDispatchToProps = {
-  setDrivingStatus: setDrivingStatus,
-};
-
-const connected = connect(mapStateToProps, mapDispatchToProps)(RootContainer);
-
-export { connected as RootContainer };
