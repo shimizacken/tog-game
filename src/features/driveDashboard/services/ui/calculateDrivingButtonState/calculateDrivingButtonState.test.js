@@ -1,5 +1,5 @@
 import { calculateDrivingButtonState } from "./calculateDrivingButtonState";
-import DrivingButtonStates from "../enums/drivingButtonStates";
+import { DrivingButtonStates } from "../enums/drivingButtonStates";
 
 describe("calculateDrivingButtonState test suite", () => {
   describe("default state", () => {

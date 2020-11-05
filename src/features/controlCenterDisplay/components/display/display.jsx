@@ -25,4 +25,4 @@ Display.defaultTypes = {
   warningInfo: undefined,
 };
 
-export default Display;
+export { Display };
