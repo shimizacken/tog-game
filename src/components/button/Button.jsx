@@ -21,4 +21,4 @@ Button.defaultTypes = {
   onClick: undefined,
 };
 
-export default Button;
+export { Button };

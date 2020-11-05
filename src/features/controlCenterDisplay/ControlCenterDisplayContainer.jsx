@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import Display from "./components/display/Display";
-import DrivingButtonStates from "../driveDashboard/services/ui/enums/drivingButtonStates";
+import { Display } from "./components/display/Display";
+import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
 
 const ControlCenterDisplayContainer = ({
   drivingButtonState,
@@ -28,4 +28,6 @@ const mapStateToProps = (state) => ({
   drivingStatus: state.driveDashboard.drivingStatus,
 });
 
-export default connect(mapStateToProps)(ControlCenterDisplayContainer);
+const connected = connect(mapStateToProps)(ControlCenterDisplayContainer);
+
+export { connected as ControlCenterDisplayContainer };

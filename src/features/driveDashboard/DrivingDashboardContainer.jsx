@@ -1,18 +1,17 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import Panel from "../../components/panel/Panel";
-import DrivingButton from "./components/driveButton/DriveButton";
-import { calculateDrivingButtonState } from "./services/ui/calculateDrivingButtonState/calculateDrivingButtonState";
+import { Panel } from "../../components/panel/Panel";
+import { DrivingButton } from "./components/driveButton/DrivingButton";
+import { DrivingButtonStates } from "./services/ui/enums/drivingButtonStates";
+import { ThrottleStick } from "./components/throttleStick/ThrottleStick";
 import { setDrivingButtonState, setThrottleSpeed } from "./state/actions";
-import DrivingButtonStates from "./services/ui/enums/drivingButtonStates";
-import ThrottleStick from "./components/throttleStick/ThrottleStick";
+import { calculateDrivingButtonState } from "./services/ui/calculateDrivingButtonState/calculateDrivingButtonState";
 
 const DrivingDashboardContainer = ({
   drivingButtonState,
   throttleSpeed,
   setDrivingButtonState,
   setThrottleSpeed,
-  drivingStatus,
 }) => {
   const click = () =>
     setDrivingButtonState(
@@ -43,7 +42,9 @@ const mapDispatchToProps = {
   setThrottleSpeed,
 };
 
-export default connect(
+const connected = connect(
   mapStateToProps,
   mapDispatchToProps
 )(DrivingDashboardContainer);
+
+export { connected as DrivingDashboardContainer };

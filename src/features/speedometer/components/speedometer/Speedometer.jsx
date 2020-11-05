@@ -23,4 +23,4 @@ Speedometer.propTypes = {
   speed: PropTypes.number.isRequired,
 };
 
-export default Speedometer;
+export { Speedometer };

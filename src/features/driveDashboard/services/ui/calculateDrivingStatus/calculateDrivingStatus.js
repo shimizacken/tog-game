@@ -1,4 +1,4 @@
-import DrivingButtonStates from "../enums/drivingButtonStates";
+import { DrivingButtonStates } from "../enums/drivingButtonStates";
 
 export const calculateDrivingStatus = (
   drivingButtonState = DrivingButtonStates.READY,
