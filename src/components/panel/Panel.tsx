@@ -1,9 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./Panel.module.scss";
 
-const Panel = ({
+export const Panel: React.FC<
+  React.ComponentProps<"div"> & {
+    classNameInnerWrapper?: string,
+    width?: string,
+    height?: string,
+    minWidth?: string,
+    minHeight?: string,
+  }
+> = ({
   children,
   className,
   classNameInnerWrapper,
@@ -26,23 +33,3 @@ const Panel = ({
     </div>
   </div>
 );
-
-Panel.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-  width: PropTypes.string,
-  height: PropTypes.string,
-  minWidth: PropTypes.string,
-  minHeight: PropTypes.string,
-};
-
-Panel.defaultTypes = {
-  children: undefined,
-  className: undefined,
-  width: undefined,
-  height: undefined,
-  minWidth: undefined,
-  minHeight: undefined,
-};
-
-export { Panel };
