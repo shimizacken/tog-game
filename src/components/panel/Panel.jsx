@@ -11,23 +11,21 @@ const Panel = ({
   height,
   minWidth,
   minHeight,
-}) => {
-  return (
-    <div
-      className={classNames(styles.root, className)}
-      style={{
-        width: width,
-        height: height,
-        minWidth: minWidth,
-        minHeight: minHeight,
-      }}
-    >
-      <div className={classNames(styles.innerwrapper, classNameInnerWrapper)}>
-        {children}
-      </div>
+}) => (
+  <div
+    className={classNames(styles.root, className)}
+    style={{
+      width: width,
+      height: height,
+      minWidth: minWidth,
+      minHeight: minHeight,
+    }}
+  >
+    <div className={classNames(styles.innerwrapper, classNameInnerWrapper)}>
+      {children}
     </div>
-  );
-};
+  </div>
+);
 
 Panel.propTypes = {
   children: PropTypes.node,

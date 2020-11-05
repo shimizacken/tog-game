@@ -20,7 +20,7 @@ const LightsPanelContainer = ({
   toggleCabinLights,
   toggleWagonsLights,
 }) => (
-  <Panel classNameInnerWrapper={styles.buttons} width={200} height={200}>
+  <Panel classNameInnerWrapper={styles.buttons} width={"200"} height={"200"}>
     <LightButton
       enabled={frontLightsState}
       text={"Front"}
