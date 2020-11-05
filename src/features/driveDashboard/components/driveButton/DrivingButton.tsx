@@ -1,11 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
 import { DrivingButtonStates } from "../../services/ui/enums/drivingButtonStates";
 import { Button } from "../../../../components/button/Button";
 import styles from "./DriveButton.module.scss";
 
-export const DrivingButton = React.memo(({ drivingButtonStates, onClick }) => {
+export const DrivingButton: React.FC<{
+  drivingButtonStates: string;
+  onClick: () => void;
+}> = ({ drivingButtonStates, onClick }) => {
   let color;
 
   if (drivingButtonStates === DrivingButtonStates.TURNED_OFF) {
@@ -34,9 +36,4 @@ export const DrivingButton = React.memo(({ drivingButtonStates, onClick }) => {
       onClick={onClick}
     ></Button>
   );
-});
-
-DrivingButton.propTypes = {
-  drivingButtonStates: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
