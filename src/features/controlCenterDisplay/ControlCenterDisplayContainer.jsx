@@ -1,13 +1,19 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { Display } from "./components/display/display";
 import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
 
-const ControlCenterDisplayContainer = ({
-  drivingButtonState,
-  throttleSpeed,
-  drivingStatus,
-}) => {
+export const ControlCenterDisplayContainer = () => {
+  const drivingButtonState = useSelector(
+    (state) => state.driveDashboard.drivingButtonState
+  );
+  const throttleSpeed = useSelector(
+    (state) => state.driveDashboard.throttleSpeed
+  );
+  const drivingStatus = useSelector(
+    (state) => state.driveDashboard.drivingStatus
+  );
+
   const drive = drivingStatus ? "Tog is driving" : "";
   const buttonStatus =
     drivingButtonState !== DrivingButtonStates.SWITCHING
@@ -21,13 +27,3 @@ const ControlCenterDisplayContainer = ({
     </div>
   );
 };
-
-const mapStateToProps = (state) => ({
-  drivingButtonState: state.driveDashboard.drivingButtonState,
-  throttleSpeed: state.driveDashboard.throttleSpeed,
-  drivingStatus: state.driveDashboard.drivingStatus,
-});
-
-const connected = connect(mapStateToProps)(ControlCenterDisplayContainer);
-
-export { connected as ControlCenterDisplayContainer };
