@@ -9406,10 +9406,10 @@ react-error-overlay@^6.0.7:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
 
-react-input-slider@^5.0.8:
-  version "5.1.7"
-  resolved "https://registry.yarnpkg.com/react-input-slider/-/react-input-slider-5.1.7.tgz#738030f88d6781f1fe423a6de62682991282be20"
-  integrity sha512-w8ciwQCJcY5qKygQQTKTvnxR1CYiTE6fd1M0w29sHqzXPq+44SiWqPJxg7esuejFzRAluHaus7BEgRSJcQcpLg==
+react-input-slider@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/react-input-slider/-/react-input-slider-6.0.0.tgz#4de0a5a9635b57ce6bfb34a3f72cfe1c60267efb"
+  integrity sha512-/8VEnReKz1zsgEaQOzaXF+hphltM7lh18+HgnOnkgXPIBL32AJQIagGzsPRlOX0na1G2w6juMy2lS4LsQAsZ7g==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@emotion/core" "^10.0.14"
@@ -9636,10 +9636,10 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-redux@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
-  integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
+redux@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
+  integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
   dependencies:
     loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
