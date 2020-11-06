@@ -1,18 +1,19 @@
 import React, { useMemo } from "react";
 import { useSelector } from "react-redux";
-import rangeMapper from "range-mapper";
 import { Speedometer } from "./components/speedometer/Speedometer";
 import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
+import { RootState } from "../../state/store";
+import { clamped } from "../../utils/rangeMapper/rangeMapper";
 
-export const SpeedometerContainer = () => {
+export const SpeedometerContainer: React.FC = () => {
   const drivingButtonState = useSelector(
-    (state) => state.driveDashboard.drivingButtonState
+    (state: RootState) => state.driveDashboard.drivingButtonState
   );
   const throttleSpeed = useSelector(
-    (state) => state.driveDashboard.throttleSpeed
+    (state: RootState) => state.driveDashboard.throttleSpeed
   );
 
-  const interpolate = useMemo(() => rangeMapper.clamped(0, 100, -90, 90), []);
+  const interpolate = useMemo(() => clamped(0, 100, -90, 90), []);
 
   return (
     <Speedometer

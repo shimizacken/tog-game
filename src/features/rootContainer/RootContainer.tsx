@@ -8,14 +8,15 @@ import { calculateShakeClassName } from "../driveDashboard/services/ui/calculate
 import { setDrivingStatus } from "../driveDashboard/state/actions";
 import { calculateDrivingStatus } from "../driveDashboard/services/ui/calculateDrivingStatus/calculateDrivingStatus";
 import styles from "./RootContainer.module.scss";
+import { RootState } from "../../state/store";
 
-export const RootContainer = () => {
+export const RootContainer: React.FC = () => {
   const dispatch = useDispatch();
   const drivingButtonState = useSelector(
-    (state) => state.driveDashboard.drivingButtonState
+    (state: RootState) => state.driveDashboard.drivingButtonState
   );
   const throttleSpeed = useSelector(
-    (state) => state.driveDashboard.throttleSpeed
+    (state: RootState) => state.driveDashboard.throttleSpeed
   );
 
   const drivingStatus = useMemo(

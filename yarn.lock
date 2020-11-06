@@ -9446,11 +9446,6 @@ randomfill@^1.0.3:
     randombytes "^2.0.5"
     safe-buffer "^5.1.0"
 
-range-mapper@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/range-mapper/-/range-mapper-1.0.0.tgz#46578d8835d470bef97ffb4f651137fae3c2deed"
-  integrity sha1-RleNiDXUcL75f/tPZRE3+uPC3u0=
-
 range-parser@^1.2.1, range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
