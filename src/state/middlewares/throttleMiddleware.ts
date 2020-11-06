@@ -1,6 +1,8 @@
-const throttled = {};
+import { Middleware } from "redux";
 
-const throttleMiddleware = ({ dispatch, getState }) => (next) => (action) => {
+const throttled: Record<string, boolean> = {};
+
+export const throttleMiddleware: Middleware = () => (next) => (action) => {
   const time = action.meta && action.meta.throttle;
 
   if (!time) {
@@ -18,5 +20,3 @@ const throttleMiddleware = ({ dispatch, getState }) => (next) => (action) => {
     next(action);
   }, time);
 };
-
-export default throttleMiddleware;
