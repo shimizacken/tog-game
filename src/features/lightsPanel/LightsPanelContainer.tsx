@@ -9,18 +9,21 @@ import {
   setWagonsLightState,
 } from "./state/actions";
 import styles from "./LightsPanelContainer.module.scss";
+import { RootState } from "../../state/store";
 
-export const LightsPanelContainer = () => {
+export const LightsPanelContainer: React.FC = () => {
   const dispatch = useDispatch();
   const frontLightsState = useSelector(
-    (state) => state.lights.frontLightsState
+    (state: RootState) => state.lights.frontLightsState
   );
-  const backLightsState = useSelector((state) => state.lights.backLightsState);
+  const backLightsState = useSelector(
+    (state: RootState) => state.lights.backLightsState
+  );
   const cabinLightsState = useSelector(
-    (state) => state.lights.cabinLightsState
+    (state: RootState) => state.lights.cabinLightsState
   );
   const wagonsLightsState = useSelector(
-    (state) => state.lights.wagonsLightsState
+    (state: RootState) => state.lights.wagonsLightsState
   );
 
   return (

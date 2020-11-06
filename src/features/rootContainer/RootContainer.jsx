@@ -1,12 +1,12 @@
 import React, { useMemo, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { DrivingDashboardContainer } from "../features/driveDashboard/DrivingDashboardContainer";
-import { SpeedometerContainer } from "../features/speedometer/SpeedometerContainer";
-import { ControlCenterDisplayContainer } from "../features/controlCenterDisplay/ControlCenterDisplayContainer";
-import { LightsPanelContainer } from "../features/lightsPanel/LightsPanelContainer";
-import { calculateShakeClassName } from "../features/driveDashboard/services/ui/calculateShakeClassName/calculateShakeClassName";
-import { setDrivingStatus } from "../features/driveDashboard/state/actions";
-import { calculateDrivingStatus } from "../features/driveDashboard/services/ui/calculateDrivingStatus/calculateDrivingStatus";
+import { DrivingDashboardContainer } from "../driveDashboard/DrivingDashboardContainer";
+import { SpeedometerContainer } from "../speedometer/SpeedometerContainer";
+import { ControlCenterDisplayContainer } from "../controlCenterDisplay/ControlCenterDisplayContainer";
+import { LightsPanelContainer } from "../lightsPanel/LightsPanelContainer";
+import { calculateShakeClassName } from "../driveDashboard/services/ui/calculateShakeClassName/calculateShakeClassName";
+import { setDrivingStatus } from "../driveDashboard/state/actions";
+import { calculateDrivingStatus } from "../driveDashboard/services/ui/calculateDrivingStatus/calculateDrivingStatus";
 import styles from "./RootContainer.module.scss";
 
 export const RootContainer = () => {

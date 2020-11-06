@@ -26,10 +26,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": [
-    "**/*"
-  ],
-  "exclude": [
-    "**/node_modules/*"
-  ]
+  "include": ["**/*", "@types", "./globals.d.ts"],
+  "exclude": ["**/node_modules/*"]
 }
