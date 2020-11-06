@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Provider } from "react-redux";
-import store from "./state/store";
-import { RootContainer } from "./rootContainer/RootContainer";
+import { store } from "./state/store";
+import { RootContainer } from "./features/rootContainer/RootContainer";
 import styles from "./app.module.scss";
 
 class App extends Component {

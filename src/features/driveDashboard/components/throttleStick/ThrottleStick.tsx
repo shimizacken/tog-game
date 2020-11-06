@@ -1,9 +1,11 @@
 import React from "react";
 import Slider from "react-input-slider";
 
+export type Axis = { x: number; y: number };
+
 export const ThrottleStick: React.FC<{
   speed: number;
-  onChange: () => void;
+  onChange: (axis: Axis) => void;
 }> = ({ onChange, speed }) => (
   <div>
     <Slider
