@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import { reducers } from "./reducers";
 import { middlewares } from "./middlewares/middlewares";
+import { DrivingButtonStates } from "../features/driveDashboard/services/ui/enums/drivingButtonStates";
 
 declare global {
   interface Window {
@@ -10,7 +11,7 @@ declare global {
 
 export interface RootState {
   driveDashboard: {
-    drivingButtonState: string;
+    drivingButtonState: DrivingButtonStates;
     throttleSpeed: number;
     drivingStatus: boolean;
   };
