@@ -1,4 +1,7 @@
-import { calculateShakeClassName } from "./calculateShakeClassName";
+import {
+  calculateShakeClassName,
+  ShakeStyles,
+} from "./calculateShakeClassName";
 
 describe("calculateShakeClassName test suite", () => {
   const mockStyles = {
@@ -10,14 +13,10 @@ describe("calculateShakeClassName test suite", () => {
   };
 
   describe("return undefined", () => {
-    it("should return undefined when no drivingStatus passed", () => {
-      expect(calculateShakeClassName()).toMatchSnapshot();
-    });
-
     it("should return undefined when drivingStatus is false", () => {
       const drivingStatus = false;
       const throttleSpeed = 0;
-      const styles = {};
+      const styles: ShakeStyles = {};
 
       expect(
         calculateShakeClassName(drivingStatus, throttleSpeed, styles)
@@ -27,7 +26,7 @@ describe("calculateShakeClassName test suite", () => {
     it("should return undefined when drivingStatus is true and styles is undefined", () => {
       const drivingStatus = false;
       const throttleSpeed = 0;
-      let styles;
+      const styles: ShakeStyles = {};
 
       expect(
         calculateShakeClassName(drivingStatus, throttleSpeed, styles)
@@ -37,7 +36,7 @@ describe("calculateShakeClassName test suite", () => {
     it("should return undefined when drivingStatus is true but speed is zero", () => {
       const drivingStatus = true;
       const throttleSpeed = 0;
-      let styles;
+      const styles: ShakeStyles = {};
 
       expect(
         calculateShakeClassName(drivingStatus, throttleSpeed, styles)

@@ -1,7 +1,15 @@
+export type ShakeStyles = {
+  shakeveryveryfast?: string;
+  shakeveryfast?: string;
+  shakefast?: string;
+  shakeslow?: string;
+  shakeveryslow?: string;
+};
+
 export const calculateShakeClassName = (
-  drivingStatus,
-  throttleSpeed,
-  styles
+  drivingStatus: boolean,
+  throttleSpeed: number,
+  styles: ShakeStyles
 ) => {
   if (drivingStatus === false) {
     return;

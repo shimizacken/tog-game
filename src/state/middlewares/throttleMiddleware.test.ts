@@ -1,11 +1,12 @@
+import { AnyAction, Dispatch } from "redux";
 import { createFakedMiddleware } from "../../../__mocks__/middleware/createFakedMiddleware";
-import throttleMiddleware from "../middlewares/throttleMiddleware";
+import { throttleMiddleware } from "./throttleMiddleware";
 import { setThrottleSpeed } from "../../features/driveDashboard/state/actions";
 
 jest.useFakeTimers();
 
 describe("driveDashboardMiddleware test suite", () => {
-  const testNextFunction = (next, action) => {
+  const testNextFunction = (next: Dispatch<AnyAction>, action: AnyAction) => {
     expect(next).toHaveBeenCalledWith(action);
     expect(next).toHaveBeenCalledTimes(1);
   };

@@ -6,8 +6,6 @@ exports[`calculateShakeClassName test suite return undefined should return undef
 
 exports[`calculateShakeClassName test suite return undefined should return undefined when drivingStatus is true but speed is zero 1`] = `undefined`;
 
-exports[`calculateShakeClassName test suite return undefined should return undefined when no drivingStatus passed 1`] = `undefined`;
-
 exports[`calculateShakeClassName test suite valid class names should return shakefast when speed is higher than 40 and lower or equal to 60 1`] = `"shakefast"`;
 
 exports[`calculateShakeClassName test suite valid class names should return shakeslow when speed is higher than 10 and lower or equal to 40 1`] = `"shakeslow"`;

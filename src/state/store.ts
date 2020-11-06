@@ -1,6 +1,7 @@
-import { createStore, applyMiddleware, compose } from "redux";
+import { createStore, applyMiddleware, compose, Store, Dispatch } from "redux";
 import { reducers } from "./reducers";
 import { middlewares } from "./middlewares/middlewares";
+import { RootState } from "./store.types";
 
 declare global {
   interface Window {
@@ -13,7 +14,6 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
     : compose;
 
-export const store = createStore(
-  reducers,
-  composeEnhancers(applyMiddleware(...middlewares))
-);
+export const store: Store<RootState> & {
+  dispatch: Dispatch;
+} = createStore(reducers, composeEnhancers(applyMiddleware(...middlewares)));

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lights actions test suite should return setBackLightState 1`] = `
+Object {
+  "type": "SET_BACK_LIGHT_STATE",
+}
+`;
+
+exports[`lights actions test suite should return setCabinLightState action 1`] = `
+Object {
+  "type": "SET_CABIN_LIGHT_STATE",
+}
+`;
+
+exports[`lights actions test suite should return setFrontLightState action 1`] = `
+Object {
+  "type": "SET_FRONT_LIGHT_STATE",
+}
+`;
+
+exports[`lights actions test suite should return setWagonsLightState action 1`] = `
+Object {
+  "type": "SET_WAGON_LIGHT_STATE",
+}
+`;
