@@ -2,16 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Display } from "./components/display/Display";
 import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
+import { RootState } from "../../state/store";
 
-export const ControlCenterDisplayContainer = () => {
+export const ControlCenterDisplayContainer: React.FC = () => {
   const drivingButtonState = useSelector(
-    (state) => state.driveDashboard.drivingButtonState
+    (state: RootState) => state.driveDashboard.drivingButtonState
   );
   const throttleSpeed = useSelector(
-    (state) => state.driveDashboard.throttleSpeed
+    (state: RootState) => state.driveDashboard.throttleSpeed
   );
   const drivingStatus = useSelector(
-    (state) => state.driveDashboard.drivingStatus
+    (state: RootState) => state.driveDashboard.drivingStatus
   );
 
   const drive = drivingStatus ? "Tog is driving" : "";

@@ -3,17 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Panel } from "../../components/panel/Panel";
 import { DrivingButton } from "./components/driveButton/DrivingButton";
 import { DrivingButtonStates } from "./services/ui/enums/drivingButtonStates";
-import { ThrottleStick } from "./components/throttleStick/ThrottleStick";
+import { Axis, ThrottleStick } from "./components/throttleStick/ThrottleStick";
 import { setDrivingButtonState, setThrottleSpeed } from "./state/actions";
 import { calculateDrivingButtonState } from "./services/ui/calculateDrivingButtonState/calculateDrivingButtonState";
+import { RootState } from "../../state/store";
 
 export const DrivingDashboardContainer = () => {
   const dispatch = useDispatch();
   const drivingButtonState = useSelector(
-    (state) => state.driveDashboard.drivingButtonState
+    (state: RootState) => state.driveDashboard.drivingButtonState
   );
   const throttleSpeed = useSelector(
-    (state) => state.driveDashboard.throttleSpeed
+    (state: RootState) => state.driveDashboard.throttleSpeed
   );
 
   const click = () =>
@@ -22,7 +23,8 @@ export const DrivingDashboardContainer = () => {
         calculateDrivingButtonState(drivingButtonState).drivingButtonStates
       )
     );
-  const change = (axis) => dispatch(setThrottleSpeed(axis.y));
+
+  const change = (axis: Axis) => dispatch(setThrottleSpeed(axis.y));
 
   useEffect(() => {
     dispatch(setDrivingButtonState(DrivingButtonStates.READY));
