@@ -11,12 +11,7 @@ import {
   SetDrivingStatus,
 } from "./actions";
 import { Action } from "redux";
-
-export type DriveDashboardState = {
-  readonly drivingButtonState: DrivingButtonStates;
-  readonly throttleSpeed: 0;
-  readonly drivingStatus: false;
-};
+import type { DriveDashboardState } from "../../../state/store.types";
 
 const driveDashboardInitialState: DriveDashboardState = {
   drivingButtonState: DrivingButtonStates.TURNED_OFF,

@@ -1,22 +1,21 @@
 import { DrivingButtonStates } from "../features/driveDashboard/services/ui/enums/drivingButtonStates";
-import { LightsState } from "../features/lightsPanel/state/reducers";
 
 export interface DriveDashboardState {
-  drivingButtonState: DrivingButtonStates;
-  throttleSpeed: number;
-  drivingStatus: boolean;
+  readonly drivingButtonState: DrivingButtonStates;
+  readonly throttleSpeed: number;
+  readonly drivingStatus: boolean;
 }
 
 export interface ControlCenterDisplayState {
-  drivingInfo?: string;
-  warningInfo?: string;
+  readonly drivingInfo?: string;
+  readonly warningInfo?: string;
 }
 
-export interface LightState {
-  frontLightsState: boolean;
-  backLightsState: boolean;
-  cabinLightsState: boolean;
-  wagonsLightsState: boolean;
+export interface LightsState {
+  readonly frontLightsState: boolean;
+  readonly backLightsState: boolean;
+  readonly cabinLightsState: boolean;
+  readonly wagonsLightsState: boolean;
 }
 
 export interface RootState {

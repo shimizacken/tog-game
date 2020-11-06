@@ -5,13 +5,7 @@ import {
   SET_CABIN_LIGHT_STATE,
   SET_WAGON_LIGHT_STATE,
 } from "./constants";
-
-export type LightsState = {
-  readonly frontLightsState: false;
-  readonly backLightsState: false;
-  readonly cabinLightsState: false;
-  readonly wagonsLightsState: false;
-};
+import type { LightsState } from "../../../state/store.types";
 
 const lightsInitialState: LightsState = {
   frontLightsState: false,
