@@ -8,8 +8,8 @@ import {
   setCabinLightState,
   setWagonsLightState,
 } from "./state/actions";
+import { RootState } from "../../state/store.types";
 import styles from "./LightsPanelContainer.module.scss";
-import { RootState } from "../../state/store";
 
 export const LightsPanelContainer: React.FC = () => {
   const dispatch = useDispatch();

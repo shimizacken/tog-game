@@ -6,7 +6,7 @@ import { DrivingButtonStates } from "./services/ui/enums/drivingButtonStates";
 import { Axis, ThrottleStick } from "./components/throttleStick/ThrottleStick";
 import { setDrivingButtonState, setThrottleSpeed } from "./state/actions";
 import { calculateDrivingButtonState } from "./services/ui/calculateDrivingButtonState/calculateDrivingButtonState";
-import { RootState } from "../../state/store";
+import { RootState } from "../../state/store.types";
 
 export const DrivingDashboardContainer = () => {
   const dispatch = useDispatch();

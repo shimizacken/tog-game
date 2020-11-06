@@ -7,8 +7,8 @@ import { LightsPanelContainer } from "../lightsPanel/LightsPanelContainer";
 import { calculateShakeClassName } from "../driveDashboard/services/ui/calculateShakeClassName/calculateShakeClassName";
 import { setDrivingStatus } from "../driveDashboard/state/actions";
 import { calculateDrivingStatus } from "../driveDashboard/services/ui/calculateDrivingStatus/calculateDrivingStatus";
+import { RootState } from "../../state/store.types";
 import styles from "./RootContainer.module.scss";
-import { RootState } from "../../state/store";
 
 export const RootContainer: React.FC = () => {
   const dispatch = useDispatch();

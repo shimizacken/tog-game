@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Display } from "./components/display/Display";
 import { DrivingButtonStates } from "../driveDashboard/services/ui/enums/drivingButtonStates";
-import { RootState } from "../../state/store";
+import { RootState } from "../../state/store.types";
 
 export const ControlCenterDisplayContainer: React.FC = () => {
   const drivingButtonState = useSelector(
